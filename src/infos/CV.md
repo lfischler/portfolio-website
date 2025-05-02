@@ -8,8 +8,9 @@ eleventyNavigation:
 ---
 
 ### Work
-- __2022—Present__ Community Energy Scotland Data and Digital Officer
-- __2022—Present__ University of Edinburgh PhD Research Assistant
+- __2022—Present__ Community Energy Scotland Technial Team Manager
+- __2022—24__ Community Energy Scotland Data and Digital Officer
+- __2022—23__ University of Edinburgh PhD Research Assistant
 - __2019—22__ Superflux Senior Designer and Producer
 - __2022__ IKEA for COP26 Designer
 - __2022__ Museum of the Future, Dubai Producer 
