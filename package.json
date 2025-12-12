@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy-img": "^2.0.1",
-    "eleventy-plugin-embed-everything": "^1.16.0"
+    "eleventy-plugin-embed-everything": "^1.16.0",
+    "markdown-it": "^14.1.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

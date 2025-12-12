@@ -1,4 +1,6 @@
 const Image = require("@11ty/eleventy-img");
+const markdownIt = require("markdown-it");
+const md = new markdownIt();
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(`./src${src}`, {
@@ -39,6 +41,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.addPlugin(embeds);
+
+  // Add Markdown filter
+  eleventyConfig.addFilter("markdown", (content) => {
+    return md.render(content); // Convert Markdown content to HTML
+  });
 
   return {
     dir: {
