@@ -1,4 +1,7 @@
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation"; // for side nav
+import { EleventyRenderPlugin } from "@11ty/eleventy"; // for rendering md sections
+import embeds from "eleventy-plugin-embed-everything";
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(`./src${src}`, {
@@ -18,14 +21,8 @@ async function imageShortcode(src, alt, sizes) {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation"); // for side nav
-
-const { EleventyRenderPlugin } = require("@11ty/eleventy"); // for rendering md sections
-
-const embeds = require("eleventy-plugin-embed-everything");
-
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin); //for side navigation
+export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyNavigationPlugin); // for side navigation
   
   eleventyConfig.addPassthroughCopy("./src/css/");
   eleventyConfig.addWatchTarget("./src/css/");
