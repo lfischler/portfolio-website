@@ -3,7 +3,20 @@ title: "Leanne Fischler"
 layout: "base.njk"
 ---
 
-{% include "profile.njk" %}
+{% include "homepage/profile.njk" %}
 
-{% include "history.njk" %}
+<div class="prose lg:prose-lg mx-auto p-8">
+  {% renderTemplate "md" %}
+  {% include "homepage/on-this-site.md" %}
+  {% endrenderTemplate %}
+</div>
 
+
+<div class="prose">
+  {% renderTemplate "md" %}
+  {% include "homepage/research-themes.md" %}
+  {% endrenderTemplate %}
+</div>
+
+
+{% include "homepage/currently.njk" %}
