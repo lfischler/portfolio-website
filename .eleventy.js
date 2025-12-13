@@ -42,11 +42,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(embeds);
 
-  // Add Markdown filter
-  eleventyConfig.addFilter("markdown", (content) => {
-    return md.render(content); // Convert Markdown content to HTML
-  });
-
   return {
     dir: {
       input: "src",
