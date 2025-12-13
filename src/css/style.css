@@ -77,11 +77,11 @@ a {
   max-width: 80rem;
 }
 
-.sidebar { /*sidebar container*/
+.sidebar {
   align-items: start;
-  flex-basis: 16rem; 
-  flex-grow: 1;
-	padding: 1rem;
+  flex-basis: 20rem;   /* was 16rem */
+  flex-grow: 0;        /* prevent it from stretching */
+  padding: 1.25rem;   /* optional: a little breathing room */
 }
 
 .main-content { /*content container*/

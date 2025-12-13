@@ -7,8 +7,6 @@ eleventyNavigation:
   order: 2
 ---
 
-# Get in Touch
-
 I’m frequently visiting Glasgow, Edinburgh, and occasionally London. I’m always up for a walk and a chat and enjoy meeting interesting folk. If you’re visiting Orkney, don’t leave without saying “hello”!
 
 ## Ways to Connect Professionally

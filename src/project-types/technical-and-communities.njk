@@ -1,0 +1,31 @@
+---
+title: "Community and Technical Work"
+layout: "base.njk"
+eleventyNavigation:
+  key: Community & Technical
+  parent: Projects
+  order: 3
+eleventyImport:
+  collections:
+    - participatory
+    - communities
+---
+
+<h2 class="projects__heading">Technical work</h2>
+
+<div class="project-list">
+  {% asyncEach project in collections.technical %}
+    {% include "project-card.njk" %}
+
+  {% endeach %}
+</div>
+
+
+<h2 class="projects__heading">Recent participatory community projects</h2>
+
+<div class="project-list">
+  {% asyncEach project in collections.communities %}
+    {% include "project-card.njk" %}
+
+  {% endeach %}
+</div>
