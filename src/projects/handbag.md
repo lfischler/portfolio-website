@@ -1,7 +1,7 @@
 ---
 title: "The Anti-Consumerist Handbag: critical design exploration goes viral"
 summary: "This university project was featured in The Metro, BBC Technology and on BBC Radio 4"
-image: /images/handbag-logos.jpg
+image: "/images/handbag-logos.jpg"
 imageAlt: "Handbag with logos"
 tech:
   - "Craft"

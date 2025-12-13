@@ -190,7 +190,7 @@ a {
 
 .header__title {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-family: "Roboto";
   color: var(--black)
 }
@@ -458,6 +458,7 @@ a {
   font-family: "Roboto";
   color: var(--black);
   margin-top: 2.1rem;
+  margin-bottom: 1.2rem;
 }
 
 .prose h2 {
@@ -466,6 +467,7 @@ a {
   color: var(--black);
   font-family: "Roboto";
   margin-top: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .prose h3 {
@@ -474,6 +476,7 @@ a {
   color: var(--black);
   font-family: "Roboto";
   margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .prose ul > li::before {
@@ -503,7 +506,7 @@ a {
 
 .prose p {
   max-width: 680px;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 
 .prose img {

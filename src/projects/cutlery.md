@@ -1,7 +1,7 @@
 ---
 title: "Sculptures from Post-Anthropocene Islands"
 summary: "Sculptural contributions to Superflux's Refuge for Resurgence (2021)"
-image: /images/cutlery/cutlery-30.jpg
+image: "/images/cutlery/cutlery-30.jpg"
 imageAlt: "Sculptural cutlery"
 year: 2020
 tech:

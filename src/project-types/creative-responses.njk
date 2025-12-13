@@ -7,7 +7,17 @@ eleventyNavigation:
   order: 2
 ---
 
+
+{% include "projects-intro-section.njk" %}
+
 <h2 class="projects__heading">Creative Responses</h2>
+
+<div class="prose lg:prose-lg mx-auto p-8">
+  {% renderTemplate "md" %}
+These projects represent the physical, visual, and communicative outputs of my research. This is where the inquiry becomes a public installation, exhibition, or designed artifact intended to provoke thought and engagement.  {% endrenderTemplate %}
+</div>
+
+
 <div class="project-list">
   {% asyncEach project in collections.creative %}
     {% include "project-card.njk" %}

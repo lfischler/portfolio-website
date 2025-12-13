@@ -1,7 +1,7 @@
 ---
 title: "Light Design reflecting on mass-production in design"
 summary: "Made in China is a sculptural light design reflecting on craft versus mass production"
-image: /images/china_1_resized.jpg
+image: "/images/china_1_resized.jpg"
 imageAlt: "Sculptural light design"
 tech:
   - "Sculpture"

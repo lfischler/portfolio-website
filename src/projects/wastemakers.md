@@ -1,7 +1,7 @@
 ---
 title: "Wastemakers"
 summary: "A kit to inspire people to build with waste materials."
-image: /images/wastemakers_1_resized.jpg
+image: "/images/wastemakers_1_resized.jpg"
 imageAlt: "Wastemakers cover image"
 tech:
   - "creative"

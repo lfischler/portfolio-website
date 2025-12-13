@@ -3,34 +3,36 @@ layout: "base.njk"
 ---
 
 <div class="project">
-  <h2 class="project__heading">{{ title }}</h2>
-  <div class="project__image-wrapper">
-      {% EleventyImage image, imageAlt, "(min-width: 30em) 50vw, 100vw" %}
-  </div>
-  
-  <h2 class="profile__text profile__text--lead"> {{ summary }} </h2>
-    
+
+  <!-- Page Title -->
+  <h2 class="project__heading">{{ title | markdown }}</h2>
+
+  <!-- Project Image -->
+  {% if image %}
+    <div class="project__image-wrapper">
+      {% EleventyImage image, imageAlt or title, "(min-width: 30em) 50vw, 100vw" %}
+    </div>
+  {% endif %}
+
+  <!-- Project Summary (Markdown-friendly) -->
+  {% if summary %}
+    <div class="profile__text profile__text--lead">
+      {{ summary | markdown }}
+    </div>
+  {% endif %}
+
+  <!-- Project Details List -->
   <div class="project__content prose">
-    <ul>  
-      {% if year %}
-        <li><b>Year</b> {{ year }}</li>
-      {% endif %}
-      {% if client %}
-        <li><b>Client</b> {{ client }}</li>
-      {% endif %}
-      {% if skills %}
-        <li><b>Skills</b> {{ skills }}</li>
-      {% endif %}
-      {% if repoUrl %}
-        <li><b>Project Repo</b> {{ repoUrl }}</li>
-      {% endif %}
-      {% if siteUrl %}
-        <li><b>Project Link</b> {{ siteUrl }}</li>
-      {% endif %}
-      {% if collaborators %}
-        <li><b>Collaborators</b> {{ collaborators }}</li>
-      {% endif %}
+    <ul>
+      {% if year %}<li><b>Year:</b> {{ year }}</li>{% endif %}
+      {% if client %}<li><b>Client:</b> {{ client }}</li>{% endif %}
+      {% if skills %}<li><b>Skills:</b> {{ skills }}</li>{% endif %}
+      {% if repoUrl %}<li><b>Project Repo:</b> <a href="{{ repoUrl }}">{{ repoUrl }}</a></li>{% endif %}
+      {% if siteUrl %}<li><b>Project Link:</b> <a href="{{ siteUrl }}">{{ siteUrl }}</a></li>{% endif %}
+      {% if collaborators %}<li><b>Collaborators:</b> {{ collaborators }}</li>{% endif %}
     </ul>
-    {{ content | safe }}
+
+    <!-- Main Body Content (Markdown) -->
+    {{ content | markdown }}
   </div>
 </div>

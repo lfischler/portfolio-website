@@ -1,7 +1,7 @@
 ---
 title: "Anatomies of a Black Box mapping Energy's relationship with AI"
 summary: "Contribution to Matadero Estudios Críticos. Vol. 2"
-image: /images/energy-ai_1.jpg
+image: "/images/energy-ai_1.jpg"
 imageAlt: "Screenshot of data visualisation"
 tech:
   - "Data analysis"
