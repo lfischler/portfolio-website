@@ -1,8 +1,8 @@
 ---
-title: "Contact Leanne Fischler"
+title: "Connect with Leanne Fischler"
 layout: "infos.njk"
 eleventyNavigation:
-  key: Contact
+  key: Connect
   parent: Info
   order: 2
 ---
