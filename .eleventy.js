@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
@@ -17,6 +19,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdown", (content) => {
     return mdLib.render(content);
   });
+
+  // Registering the 'file' filter
+  eleventyConfig.addFilter("file", function(filePath) {
+    const fs = require("fs");
+    const path = require("path");
+    const matter = require("gray-matter");
+
+    const file = path.join(__dirname, "src", filePath);  // Adjust the path as necessary
+    const fileContent = fs.readFileSync(file, "utf-8"); // Read the file content
+
+    // Parse the front matter and return only the content
+    const { content } = matter(fileContent);
+    return content;
+  });
+
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

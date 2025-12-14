@@ -10,20 +10,18 @@ eleventyImport:
     - dissemination
 ---
 
-
 {% include "projects-intro-section.njk" %}
 
 <h2 class="projects__heading">Talks and Print</h2>
 
 <div class="prose lg:prose-lg mx-auto p-8">
   {% renderTemplate "md" %}
-Dissemination is a crucial part of my academic process. This section collects the ways I share my findings and experiences through formal presentations, published articles, and educational media.
+Here, I plan to collect the ways that I share my findings and experiences through formal presentations, published articles, and educational media.
+  {% endrenderTemplate %}
 </div>
-
 
 <div class="project-list">
   {% asyncEach project in collections.dissemination %}
     {% include "project-card.njk" %}
-
   {% endeach %}
 </div>

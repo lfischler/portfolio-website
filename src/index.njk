@@ -6,17 +6,13 @@ layout: "base.njk"
 {% include "homepage/profile.njk" %}
 
 <div class="prose lg:prose-lg mx-auto p-8">
-  {% renderTemplate "md" %}
-  {% include "homepage/on-this-site.md" %}
-  {% endrenderTemplate %}
+  {{ "homepage/on-this-site.md" | file | markdown | safe }}
 </div>
-
 
 <div class="prose">
-  {% renderTemplate "md" %}
-  {% include "homepage/research-themes.md" %}
-  {% endrenderTemplate %}
+  {{ "homepage/research-themes.md" | file | markdown | safe }}
 </div>
 
-
-{% include "homepage/currently.njk" %}
+<div class="prose">
+  {{ "homepage/history.md" | file | markdown | safe }}
+</div>

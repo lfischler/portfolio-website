@@ -247,13 +247,13 @@ a {
 .profile__image-wrapper img {
   width: 200px;
   height: 200px;
-  border-radius: 9999px;
 }
 
 .profile__text {
   margin-bottom: 1rem;
   color: var(--black);
   line-height: 1.6;
+  margin-left: 1rem;
 }
 
 .profile__text--lead {
