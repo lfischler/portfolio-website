@@ -1,7 +1,7 @@
 ---
 title: "Boatbuilding with Archipelago Folkschool"
 summary: "We built a wooden boat in five days with Arcipelago Folkschool"
-image: /images/boat_8_resized.jpg
+image: "/images/boat_8_resized.jpg"
 imageAlt: "boatbuilders having fun"
 tech:
   - "Woodwork"

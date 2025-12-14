@@ -1,7 +1,7 @@
 ---
 title: "Scottish Design Relay"
 summary: "An Scotland-wide program of events run for V&A Dundee"
-image: /images/SDR_sized-for-web.jpeg
+image: "/images/SDR_sized-for-web.jpeg"
 imageAlt: "V&A Dundee Image of Scottish Design Relay"
 tech:
   - "Facilitation"

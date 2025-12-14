@@ -3,7 +3,16 @@ title: "Leanne Fischler"
 layout: "base.njk"
 ---
 
-{% include "profile.njk" %}
+{% include "homepage/profile.njk" %}
 
-{% include "history.njk" %}
+<div class="prose lg:prose-lg mx-auto p-8">
+  {{ "homepage/on-this-site.md" | file | markdown | safe }}
+</div>
 
+<div class="prose">
+  {{ "homepage/research-themes.md" | file | markdown | safe }}
+</div>
+
+<div class="prose">
+  {{ "homepage/history.md" | file | markdown | safe }}
+</div>

@@ -1,7 +1,7 @@
 ---
 title: "Building a crystal radio"
 summary: "Building a crystal radio from scavenged components."
-image: /images/radio_5_resized.jpg
+image: "/images/radio_5_resized.jpg"
 imageAlt: "finished radio"
 tech:
   - "craft"

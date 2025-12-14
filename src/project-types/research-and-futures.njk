@@ -1,19 +1,29 @@
 ---
-title: "Research and Speculative Futures"
+title: "Research and Futures"
 layout: "base.njk"
 eleventyNavigation:
-  key: Research and Futures
+  key: Research & Futures
   parent: Projects
-  order: 3
+  order: 1
 ---
 
-<h2 class="projects__heading">Futures</h2>
+{% include "projects-intro-section.njk" %}
 
-<div class="project-grid">
-  {% asyncEach project in collections.futures %}
-    {% include "project-card.njk" %}
-  {% endeach %}
-  {% asyncEach project in collections.research %}
-    {% include "project-card.njk" %}
-  {% endeach %}
+<h2 class="projects__heading">Research and Futures</h2>
+
+<div class="prose lg:prose-lg mx-auto p-8">
+  {% renderTemplate "md" %}
+This section captures the core academic and speculative inquiry driving my practice. Here, the focus is on framing complex issues around emerging technologies, climate change, and citizen-centered alternatives.
+  {% endrenderTemplate %}
 </div>
+
+<section class="project-grid-container">
+  <div class="project-grid">
+    {% asyncEach project in collections.futures %}
+      {% include "project-card.njk" %}
+    {% endeach %}
+    {% asyncEach project in collections.research %}
+      {% include "project-card.njk" %}
+    {% endeach %}
+  </div>
+</section>

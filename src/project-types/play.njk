@@ -4,10 +4,18 @@ layout: "base.njk"
 eleventyNavigation:
   key: Play
   parent: Projects
-  order: 6
+  order: 4
 ---
 
+{% include "projects-intro-section.njk" %}
+
 <h2 class="projects__heading">Play</h2>
+
+<div class="prose lg:prose-lg mx-auto p-8">
+  {% renderTemplate "md" %}
+A space for experimentation, learning, and hands-on skills development outside of formal projects.
+  {% endrenderTemplate %}
+</div>
 
 <div class="project-grid">
   {% asyncEach project in collections.play %}

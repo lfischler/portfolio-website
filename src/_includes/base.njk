@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:opsz@6..12&family=Roboto&display=swap" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="{{'/css/style.css' | url | safe}}">
-  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ '/css/style.css' | url | safe }}">
+  <title>{{ title | default("Default Title") }}</title>
 </head>
 <body>
   <div class="app-container">

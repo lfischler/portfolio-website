@@ -1,7 +1,7 @@
 ---
 title: "Address Fuel Poverty data activist webapp"
 summary: "An interactive and collaborative data visualisation project for activist and community groups fighting fuel poverty in Scotland"
-image: /images/address-fuel-poverty-image.jpg
+image: "/images/address-fuel-poverty-image.jpg"
 imageAlt: "Screenshot of webapp"
 tech:
   - "Academic Research"

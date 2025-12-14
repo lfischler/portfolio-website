@@ -4,6 +4,11 @@
   --slate-300: #cbd5e1;
   --slate-600: #475569;
   --black: #000000;
+  --primary-color: #2d3748; /* Slate color */
+  --secondary-color: #edf2f7; /* Light background color */
+  --highlight-color: #4a5568; /* Slightly lighter dark color */
+  --accent-color: #38a169; /* Green accent for buttons or highlights */
+  --hover-color: #e2e8f0; /* Lighter slate for hover states */
 }
 
 /* CSS Normalization */
@@ -38,11 +43,11 @@ body {
   flex-direction: column;
 }
 
-/* 
+
 ul,
 ol {
   list-style: none;
-} */
+}
 
 img,
 picture {
@@ -72,11 +77,11 @@ a {
   max-width: 80rem;
 }
 
-.sidebar { /*sidebar container*/
+.sidebar {
   align-items: start;
-  flex-basis: 16rem; 
-  flex-grow: 1;
-	padding: 1rem;
+  flex-basis: 20rem;   /* was 16rem */
+  flex-grow: 0;        /* prevent it from stretching */
+  padding: 1.25rem;   /* optional: a little breathing room */
 }
 
 .main-content { /*content container*/
@@ -102,12 +107,29 @@ a {
   user-select: none;
 }
 
-.nav-list a {
-  color: var(--black);
+/* Links */
+.nav-list a,
+.project-card__link {
   text-decoration: none;
+  color: var(--slate-300);
   display: block;
   font-size: 1rem;
   line-height: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+/* Focus state */
+.nav-list a:focus,
+.project-card__link:focus {
+  outline: 2px solid var(--accent-color); /* You can use your accent color */
+  outline-offset: 2px;
+  color: var(--accent-color); /* Optional: color change for focus state */
+}
+
+/* Active state (when link is clicked or activated) */
+.nav-list a:active,
+.project-card__link:active {
+  color: var(--slate-600); /* Slightly darker color for the active state */
 }
 
 .nav-list summary { /*for an item with a dropdown*/
@@ -168,8 +190,7 @@ a {
 
 .header__title {
   position: relative;
-  margin-bottom: 1rem;
-  color: var(--black);
+  margin-bottom: 2rem;
   font-family: "Roboto";
   color: var(--black)
 }
@@ -226,13 +247,13 @@ a {
 .profile__image-wrapper img {
   width: 200px;
   height: 200px;
-  border-radius: 9999px;
 }
 
 .profile__text {
   margin-bottom: 1rem;
   color: var(--black);
   line-height: 1.6;
+  margin-left: 1rem;
 }
 
 .profile__text--lead {
@@ -329,8 +350,13 @@ a {
 }
 
 .project-card {
-  border: 1px solid #000; /* Thin black border */
-  overflow: hidden;
+  border: 1px solid var(--slate-300); /* Slightly lighter border */
+  border-radius: 2px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .project-card__image-wrapper img {
@@ -432,6 +458,7 @@ a {
   font-family: "Roboto";
   color: var(--black);
   margin-top: 2.1rem;
+  margin-bottom: 1.2rem;
 }
 
 .prose h2 {
@@ -440,6 +467,7 @@ a {
   color: var(--black);
   font-family: "Roboto";
   margin-top: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .prose h3 {
@@ -448,14 +476,15 @@ a {
   color: var(--black);
   font-family: "Roboto";
   margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
 }
 
-.prose ul{
-  margin-bottom: 2rem;
-  list-style-type: none;
-  list-style-position: outside;
-  padding-left: 0.05em; /* Adjust padding to create space for the marker */
-  max-width: 680px;
+.prose ul > li::before {
+  content: "•"; /* Use a bullet instead of a custom text symbol */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--slate-600); /* You can match the text color or adjust */
 }
 
 .prose ul > li {
@@ -477,7 +506,7 @@ a {
 
 .prose p {
   max-width: 680px;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 
 .prose img {
@@ -497,4 +526,42 @@ a {
 .contact__sub-heading {
   padding: 0 1rem;
   color: var(--slate-600);
+}
+
+/* Mobile First */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    flex-basis: 100%;
+    padding: 1rem;
+  }
+
+  .main-content {
+    flex-basis: 100%;
+    min-inline-size: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects__heading,
+  .project__heading {
+    font-size: 1.5rem;
+  }
+
+  .profile__image-wrapper {
+    flex-basis: 10rem;
+  }
 }
