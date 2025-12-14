@@ -1,12 +1,14 @@
-const fs = require("fs");
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
-const markdownIt = require("markdown-it");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const embeds = require("eleventy-plugin-embed-everything");
+// .eleventy.js (ESM style)
+import fs from "fs";
+import path from "path";
+import Image from "@11ty/eleventy-img";
+import markdownIt from "markdown-it";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import { EleventyRenderPlugin } from "@11ty/eleventy";
+import embeds from "eleventy-plugin-embed-everything";
+import matter from "gray-matter";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // Markdown library
   const mdLib = markdownIt({
     html: true,
@@ -21,19 +23,14 @@ module.exports = function (eleventyConfig) {
   });
 
   // Registering the 'file' filter
-  eleventyConfig.addFilter("file", function(filePath) {
-    const fs = require("fs");
-    const path = require("path");
-    const matter = require("gray-matter");
-
-    const file = path.join(__dirname, "src", filePath);  // Adjust the path as necessary
-    const fileContent = fs.readFileSync(file, "utf-8"); // Read the file content
+  eleventyConfig.addFilter("file", function (filePath) {
+    const file = path.join(process.cwd(), "src", filePath); // __dirname not available in ESM
+    const fileContent = fs.readFileSync(file, "utf-8");
 
     // Parse the front matter and return only the content
     const { content } = matter(fileContent);
     return content;
   });
-
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -62,4 +59,4 @@ module.exports = function (eleventyConfig) {
   return {
     dir: { input: "src", output: "public" }
   };
-};
+}
