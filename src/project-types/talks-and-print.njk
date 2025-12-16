@@ -21,7 +21,7 @@ Here, I plan to collect the ways that I share my findings and experiences throug
 </div>
 
 <div class="project-list">
-  {% asyncEach project in collections.dissemination %}
+  {% asyncEach project in collections.dissemination | sort(attribute="data.year") | reverse %}
     {% include "project-card.njk" %}
   {% endeach %}
 </div>

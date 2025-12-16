@@ -19,10 +19,10 @@ This section captures the core academic and speculative inquiry driving my pract
 
 <section class="project-grid-container">
   <div class="project-grid">
-    {% asyncEach project in collections.futures %}
+    {% asyncEach project in collections.futures | sort(attribute="data.year") | reverse %}
       {% include "project-card.njk" %}
     {% endeach %}
-    {% asyncEach project in collections.research %}
+    {% asyncEach project in collections.research | sort(attribute="data.year") | reverse %}
       {% include "project-card.njk" %}
     {% endeach %}
   </div>

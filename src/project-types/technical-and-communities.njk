@@ -9,6 +9,7 @@ eleventyImport:
   collections:
     - participatory
     - communities
+    - technical
 ---
 
 
@@ -25,7 +26,7 @@ Here, I share applied projects that I've worked on. These projects bridge the ga
 <h2 class="projects__heading">Technical work</h2>
 
 <div class="project-list">
-  {% asyncEach project in collections.technical %}
+  {% asyncEach project in collections.technical | sort(attribute="data.year") | reverse %}
     {% include "project-card.njk" %}
 
   {% endeach %}
@@ -35,7 +36,7 @@ Here, I share applied projects that I've worked on. These projects bridge the ga
 <h2 class="projects__heading">Recent participatory community projects</h2>
 
 <div class="project-list">
-  {% asyncEach project in collections.communities %}
+  {% asyncEach project in collections.communities | sort(attribute="data.year") | reverse %}
     {% include "project-card.njk" %}
 
   {% endeach %}

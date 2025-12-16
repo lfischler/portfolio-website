@@ -18,7 +18,7 @@ A space for experimentation, learning, and hands-on skills development outside o
 </div>
 
 <div class="project-grid">
-  {% asyncEach project in collections.play %}
+  {% asyncEach project in collections.play | sort(attribute="data.year") | reverse %}
     {% include "project-card.njk" %}
   {% endeach %}
 </div>

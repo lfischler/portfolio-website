@@ -446,7 +446,6 @@ a {
 }
 
 /* Prose Styles */
-
 .prose {
   font-size: 1rem;
   color: var(--slate-600);
@@ -479,29 +478,60 @@ a {
   margin-bottom: 1.2rem;
 }
 
-.prose ul > li::before {
-  content: "•"; /* Use a bullet instead of a custom text symbol */
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--slate-600); /* You can match the text color or adjust */
+.prose h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  font-family: "Roboto";
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.prose ul,
+.prose ol {
+  max-width: 680px;       /* match paragraph width */
+  margin-bottom: 2rem;    /* same spacing as paragraphs */
+  line-height: 1.4rem;    /* unify with prose paragraphs */
 }
 
 .prose ul > li {
   position: relative;
-  padding-left: 0.8em;
-  padding-bottom: 0.2em;
+  padding-left: 1.2em;    /* space for underscore */
+  margin-bottom: 0.5rem;  /* spacing between items */
 }
 
 .prose ul > li::before {
-  content: "_ "; /* Set the marker content */
-  position: absolute; /* Position the marker absolutely */
-  left: 0; /* Position the marker to the left of the list item */
-  top: 0; /* Align the marker with the top of the list item */
+  content: "_";           /* keep your underscore marker */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--slate-600);
 }
 
-.prose ul > li::marker {
-  display: none; /* Hide the default marker */
+/* Turn off native markers */
+.prose ol {
+  list-style: none;
+  counter-reset: item;
+  max-width: 680px;
+  margin-bottom: 2rem;
+  padding-inline-start: 1.5rem;   /* gutter */
+  line-height: 1.4rem;
+}
+
+.prose ol > li {
+  position: relative;
+  counter-increment: item;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2em;            /* match UL padding */
+}
+
+.prose ol > li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--slate-600);
+  font-weight: 600;               /* optional styling */
 }
 
 .prose p {
@@ -512,6 +542,29 @@ a {
 .prose img {
   max-width: 100%;
   margin-bottom: 1.6rem;
+}
+
+/* Table Styling */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;       /* clean grid */
+  margin: 2rem 0;                  /* vertical spacing around tables */
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem 1rem;           /* whitespace buffer inside cells */
+  border: 1px solid var(--slate-300); /* thin light gray outline */
+  text-align: left;
+  background-color: transparent;   /* keep rows transparent */
+}
+
+.prose th {
+  background-color: var(--slate-tinted); /* subtle header background */
+  font-weight: 600;
+  color: var(--slate-600);
 }
 
 /* About Styles */

@@ -19,7 +19,7 @@ These projects represent the physical, visual, and communicative outputs of my r
 </div>
 
 <div class="project-list">
-  {% asyncEach project in collections.creative %}
+  {% asyncEach project in collections.creative | sort(attribute="data.year") | reverse %}
     {% include "project-card.njk" %}
   {% endeach %}
 </div>
