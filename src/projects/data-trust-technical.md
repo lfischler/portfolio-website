@@ -1,6 +1,6 @@
 ---
-title: "Community Data Trust Prototype: Technical Implementation"
-summary: "A practice-based prototype demonstrating how household energy data can be securely ingested, stored, and visualised for collective governance in Hoy and Walls."
+title: "The technical side of building a community data trust prototype"
+summary: "A reflective walk-through of building a working community data trust prototype for Hoy and Walls – the architecture, the trade-offs, and the question of who could maintain a tool like this."
 image: "/images/grafana.png"
 imageAlt: "Screenshot of prototype dashboard"
 tech:
@@ -15,91 +15,34 @@ tags:
   - "technical"
 ---
 
-## Design Output
+This is the technical companion to my dissertation project on community data trusts in Hoy and Walls. The research side of the project (what I was trying to find out, what people on the islands made of it, and what I came away thinking) is written up in [Tools, trust, and small places]({{ '/projects/island-data-futures/' | url }}). This one is about what I actually built, the choices that went into it, and what the build itself revealed.
 
-This project documents the design and implementation of a **community data trust prototype**: a practice-based response to the research enquiry into collective data governance. The prototype demonstrates how household energy data can be ingested, stored, and visualised in ways that support community-level decision-making.
+I took the dissertation as an excuse to get my hands properly dirty: to design and deploy a working tool holding real peoples' data, and to think critically about it as I went. The result was a small piece of infrastructure for collecting, storing, and visualising household energy data on Hoy and Walls.
 
-### Potential Data Types and Benefits
+## What I built
+Each participant had a monitoring device installed in their meter cupboard (often in a slightly awkward corner of the house). The device read their electricity use and sent it to Efergy's servers. From there:
 
-| Data Type                  | Example Use Case                                   | Potential Community Benefit |
-|-----------------------------|---------------------------------------------------|-----------------------------|
-| Home/business energy use    | Match demand with local generation                | Increases local use, reduces export losses, supports decarbonisation |
-| Home energy efficiency      | Identify high-usage households                    | Targeted fuel poverty interventions, reduced costs, improved wellbeing |
-| Building retrofit records   | Shared documentation of insulation/heat pumps     | Long-term housing planning, avoids siloed data |
-| Community facility usage    | Track heating/electricity demand in public sites  | Efficient use, informs retrofit and scheduling |
-| EV travel patterns          | Analyse charging needs and routes                 | Supports charging infrastructure planning |
-| Peatland restoration data   | Monitor carbon sequestration and land condition   | Evidence for funding and environmental schemes |
-| Transport data              | Aggregate travel patterns for service planning    | Aligns services with resident needs |
+- A Python script I wrote pulled the readings through Efergy's API and reformatted them for the rest of the stack.
+- The TIG Stack did the heavy lifting: Telegraf scheduled the Python script every ten seconds, InfluxDB stored the time-series data, and Grafana handled the dashboards.
+- Each component sat in its own Docker container, all hosted on Amazon Web Services.
+- For security, I used HTTPS encryption, AWS Secrets Manager for credentials, and individual logins for participants.
 
----
+Each participant could see two views: a private dashboard showing their own usage, and a shared one showing aggregated consumption across the islands.
 
-## Case Study: Home Energy Consumption
+## What was hard, and what I learned
+The hardest bit was the server infrastructure. I'd never set up a production environment on AWS before, and the gap between "it works on my laptop" and "it works on a server other people are logging into" turned out to be larger than I'd estimated. I leaned heavily on ChatGPT to get through it (this was 2024, when the models were noticeably less capable than they are now), which was genuinely useful – and which is itself part of the story this post is telling. Without that kind of support, the build would have taken much longer or stalled entirely. That tells you something about who can currently build this kind of tool, and what it takes.
 
-The prototype was developed around **home energy consumption data** in Hoy and Walls. Participants were given secure logins to access:
+## How I made the choices
+Every technical decision was a balance between four things:
 
-- **Private Household Dashboard**: Live readings of their own electricity use, collected via Efergy Engage monitoring devices.  
-- **Community Dashboard**: Aggregated consumption data across all participants, providing a live picture of domestic energy use across the islands.  
+1. What's free or cheap.
+2. What's quickest to learn given a deadline.
+3. What a community member might actually choose for themselves.
+4. What felt ethical.
 
-This dual view allowed individuals to make informed choices about their energy use, while also enabling collective insights at the community level.
+Those four don't always pull in the same direction. Grafana, for instance, was the only tool I could find that did what I needed and had enough tutorials online for me to learn it inside the timeframe. Its dashboard modules use a query language called Flux, which I hadn't touched before. I built the dashboards in it anyway, because the alternative was not building them at all.
 
----
+## The question running underneath
+Throughout the build I kept field notes. Not just about what I was doing, but about whether a community organisation could realistically take this on – set it up, maintain it, fix it when something broke. The honest answer most weeks was: not without someone like me sitting alongside them. That observation became one of the more important findings of the wider research. A tool that only its builder can maintain isn't really a community tool, however well-intentioned the build.
 
-## Technical Implementation
-
-The prototype was built using the **TIG Stack**:
-
-- **Telegraf**: Data ingestion tool, configured to run a custom Python script every ten seconds.  
-- **InfluxDB**: Time-series database storing household energy readings.  
-- **Grafana**: Dashboard tool for visualising live and historical energy consumption.  
-
-Each component ran in its own **Docker container**, connected via a Docker network for seamless data flow. This containerised architecture ensured replicability, scalability, and ease of deployment.
-
-### Data Pipeline
-
-1. **Data Ingestion**  
-   - Efergy Engage devices collected live household energy data.  
-   - A custom Python script queried the Efergy API and handled sensor variations and data gaps.  
-   - Telegraf scheduled the script to run every ten seconds, pushing readings into InfluxDB.  
-
-2. **Data Storage**  
-   - InfluxDB stored timestamped readings, enabling efficient queries and aggregation.  
-   - Error logging and Git version control ensured resilience and transparency in development.  
-
-3. **Data Visualisation**  
-   - Grafana dashboards translated raw watt readings into kilowatt hours (kWh).  
-   - Eight dashboard modules were coded using Flux query language, providing both individual and community-level views.  
-   - Users could download the underlying data for further analysis.  
-
-4. **Hosting and Security**  
-   - The TIG Stack was deployed on an **AWS EC2 server** running Ubuntu.  
-   - HTTPS encryption was enabled via Let’s Encrypt, ensuring secure data transfer.  
-   - AWS Secrets Manager was used to protect API keys and login credentials.  
-   - A custom domain (`island-data-futures.xyz`) provided accessible entry for participants.  
-
----
-
-## Prototype Build Stages
-
-- **Testing the TIG Stack locally**: Learning Docker, containerising each component, and automating builds with Docker Compose.  
-- **Data ingestion setup**: Installing Efergy devices, configuring Python scripts, and error logging.  
-- **Deployment to AWS**: Uploading via GitHub, configuring EC2 server, and securing domain access.  
-- **Dashboard creation**: Coding Grafana modules to visualise both live and historical energy consumption.  
-
----
-
-## Demonstration
-
-Screenshots from the prototype included:
-
-- Login page with secure authentication.  
-- Private household dashboard showing six-hour consumption history.  
-- Community dashboard showing aggregated seven-day energy use.  
-- Close-up graphs translating complex data into clear, actionable insights.  
-
----
-
-## Technical Achievement
-
-This prototype demonstrates that **community-controlled data infrastructures are technically feasible** using open-source tools and cloud hosting. By combining Dockerised services, custom Python scripts, and secure deployment practices, the project delivered a working model of how household energy data could be governed collectively.  
-
-The achievement lies not only in building a functioning pipeline, but in showing how technical design choices — containerisation, open standards, and security-first hosting — can support community ownership of digital tools.
+I'm pleased with what I made. Building a working, secure, hosted prototype from scratch is a real piece of technical work, and I enjoy this kind of making. The same skills also let me see clearly what the prototype depends on and who it shuts out. Both of those are true at once, and the interesting work sits in holding them together rather than choosing one.
