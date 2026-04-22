@@ -5,7 +5,7 @@ layout: "base.njk"
 <div class="project">
 
   <!-- Page Title -->
-  <h2 class="project__heading">{{ title | markdown }}</h2>
+  <h2 class="project__heading">{{ title }}</h2>
 
   <!-- Project Image -->
   {% if image %}
@@ -17,7 +17,7 @@ layout: "base.njk"
   <!-- Project Summary (Markdown-friendly) -->
   {% if summary %}
     <div class="profile__text profile__text--lead">
-      {{ summary | markdown }}
+      {{ summary | markdown | safe }}
     </div>
   {% endif %}
 
