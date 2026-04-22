@@ -1,9 +1,9 @@
 ---
-title: "On This Site"
+title: "Themes"
 ---
 
-## Key Research Themes
+## Themes
 
-*   **Data & Digital Justice:** Exploring data infrastructure and its interactions with community processes.
-*   **Community Energy:** Working on applied community energy projects.
-*   **Sustainable Systems:** Investigating consumption and waste via critical design methodologies.
+- **Tools & Community:** How the tools communities use shape what they can do and be, and what it might mean to design tools that genuinely support collective flourishing.
+- **Community Energy:** Applied work supporting place-based communities across Scotland in developing community-led energy projects.
+- **Critical Making:** Using design, prototyping, and making as methods for research, building things to surface what observation alone cannot reach.

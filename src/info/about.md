@@ -7,57 +7,68 @@ eleventyNavigation:
   order: 1
 ---
 
-## Hello there!
+## Hello
 
-Hello, I’m a researcher and creative based in the Orkney Isles. My work explores the social impacts of emerging digital technologies, focusing on how design and digital technologies might (or might not!) shape more equitable and sustainable futures.
+I'm a researcher and creative based in the Orkney Isles. My work explores how technologies get negotiated in specific places, and what it takes for tools, like digital tools and energy systems, to genuinely work for the communities they're meant to serve.
 
-My practice sits at the intersection of design, data, social research, and speculative futures. I recently graduated with an MSc with Distinction in Data, Inequality and Society from the University of Edinburgh's Edinburgh Futures Institute.
+My practice draws on design, speculative futures, Critical Data Studies, and Science and Technology Studies. My MSc in Data, Inequality and Society (Edinburgh Futures Institute, University of Edinburgh) grounded this in place-based research methods. My dissertation prototyped a community data trust on the islands of Hoy and Walls, examining the possibilities and limits of community data governance in small, place-based communities. I found that the tensions digital tools surface are often as revealing as what they enable.
 
-### Role and Experience
+Currently, I lead the technical team at [Community Energy Scotland](https://communityenergy.scot), supporting communities across Scotland in developing community-led energy projects, and actively participating in the co-production processes through which communities negotiate energy technologies and digital tools within the context of their relationship with place.
 
-This academic focus informs my technical work as the Technical Manager at Community Energy Scotland, where I lead a team developing fair and inclusive community energy projects using digital and energy technologies for social good.
+### Previous Work
 
-Previously, I spent three years as a Senior Designer at the award-winning studio Superflux, contributing to:
+Before Community Energy Scotland, I spent three years at [Superflux](https://superflux.in) contributing to and leading public-facing interventions using design fiction, material artefacts, and speculative research methods engaging publics with questions about technology, ethics, power, and more-than-human relations.. Projects spanned investigating emerging technologies, climate change futures, and citizen-centered alternatives for the internet in locations such as Singapore (ArtScience Museum), Dubai (Museum of the Future), Glasgow (COP26), Vienna (MAK), and Venice (Biennale Architettura), 
 
-*   International exhibitions (e.g., Museum of the Future in Dubai, Venice Biennale of Architecture)
-*   Films
-*   Cultural works that investigate emerging technologies, climate change futures, and citizen-centered alternatives for the internet.
+
 
 ## CV
 
+### Education
+
+- **2022—2025** MSc Data, Inequality and Society (Distinction) — University of Edinburgh, Edinburgh Futures Institute
+- **2012—2016** BSc Hons Product Design, First Class — University of Dundee, Duncan of Jordanstone College of Art & Design
+
 ### Work
-- __2024—Present__ Community Energy Scotland Technial Team Manager
-- __2022—24__ Community Energy Scotland Data and Digital Officer
-- __2022—23__ University of Edinburgh PhD Research Assistant
-- __2019—22__ Superflux Senior Designer and Producer
-- __2022__ IKEA for COP26 Designer
-- __2022__ Museum of the Future, Dubai Producer 
-- __2021__ Invocation for Hope, Vienna Installation Manager 
-- __2021__ Refuge for Resurgence, Venice Designer 
-- __2021__ the intersection - Omidyar Network Designer 
-- __2019__ Mitigation of Shock, Singapore Designer and Producer 
-- __2019—20__ Demand Energy Equality Workshop Leader
-- __2021__ Freeport: Anatomies of a Black Box Participant 
-- __2018—19__ University of Dundee Design Tutor 
-- __2017—19__ Fixperts Facilitator
-- __2017—18__ V&A Dundee: Scottish Design Relay Project Facilitator and Lead Designer 
-- __2018__ IDEO Circular Economy Fellow
-- __2016__ Anchor & Sail, Archipelago Folkschool Boat Building Tutor
 
-### Talks 
-- __2019__ Talk on Design Careers Brighton University
-- __2018__ V&A Dundee Women and the Landscape
-- __2018__ Pecha Kucha Dundee
-- __2016__ BBC Bitesize Art and Design Presenter
+- **2024—Present** Community Energy Scotland — Technical Team Manager
+- **2023—2024** Community Energy Scotland — Data and Digital Officer
+- **2023** University of Edinburgh — Research Assistant, Just Energy Transitions in Orkney (with Lara Santos Ayllón)
+- **2022—2023** Community Energy Scotland — Development Officer
+- **2021—2022** Superflux — Senior Designer and Creative Producer
+- **2019—2021** Superflux — Design Researcher and Creative Producer
+  - *Selected projects:* IKEA Exhibition, COP26 (2022); The Vault of Life, Museum of the Future Dubai (2021); Invocation for Hope, MAK Vienna (2021); Mitigation of Shock, ArtScience Museum Singapore (2019); Refuge for Resurgence, Venice Biennale (2021); Swirling Sulas, Branch/Mozilla Foundation (2022)
+- **2019** University of Dundee — Lecturer and Tutor (undergraduate module: designing for positive environmental futures)
+- **2020** Freeport: Anatomies of a Black Box — Participant researcher
+- **2019—2020** Demand Energy Equality — Workshop Leader
+- **2017—2018** V&A Dundee: Scottish Design Relay — Project Lead
+- **2018** IDEO CoLab — Circular Economy Fellow
+- **2017—19** Fixperts — Facilitator
+- **2017** MAKLab Glasgow — Studio Mentor
 
-### Print
-- __2021__ Anatomies of a Black Box Freeport
-- __2016__ Made in China Dark Mountain Project's Issue 8, TECHNÊ
+### Talks
+
+- **2026** Glasgow School of Art, Winter School Symposium
+- **2022** University of Dundee
+- **2020** University of Brighton
+- **2017** V&A Dundee — Women and the Landscape
+- **2017** Creative Dundee
+- **2016** Creative Dundee
+- **2016** BBC Bitesize — Art and Design Presenter
+
+### Print & Publications
+
+- **2025** Fischler, L. *Island Data Futures* — MSc Dissertation, University of Edinburgh (supervisor support for publication in progress)
+- **2021** Brusadin, B. *Freeport: Anatomies of a Black Box* — Matadero Centro de Creación Contemporánea
+- **2015** Fischler, L. 'Made in China', *Dark Mountain*, Issue 8, TECHNÊ
 
 ### Exhibitions
-- __2016__ Innovators Pier Arts Centre, Stromness
-- __2016__ What is it Now? Common Weal
+
+- **2016** *Innovators* — Pier Arts Centre, Stromness
+- **2016** *What is it Now?* — Common Weal
 
 ### Volunteering
-- __2014—2016__ Skill Share Dundee Board of Trustees
-- __2015—2017__ Swan Trust Sailing Instruction Volunteer
+
+- **2024—Present** Stromness Sailing Club — Adult Sail Training Instructor (RYA-certified)
+- **2025—Present** Orkney Repair Café — Repairer
+- **2016, 2018, 2019** The Swan Traditional Ship — Crew Member
+- **2013—2016** Skill Share Dundee — Board of Trustees

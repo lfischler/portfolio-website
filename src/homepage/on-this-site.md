@@ -4,6 +4,6 @@ title: "On This Site"
 
 ## On This Site
 
-I bridge speculative design with pragmatic implementation: from leading community energy projects in Scotland to exhibiting futures work at global institutions. On this site you will find theoretical and speculative design work exploring these themes; alongside applied work that I've done with community organisations.
+This site is my digital home. I hope you can find what you need here, whether that's a quick summary of who I am and what I've done, or something more unexpected that might prompt an interesting thought.
 
-You can browse a selection of my projects across these domains, or view my full [CV](/connect) for a detailed breakdown of my experience.
+If you want to get in touch, write me an email. I love to meet people, share ideas, and learn from them. And don't pass through Orkney without reaching out!
