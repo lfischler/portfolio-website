@@ -348,3 +348,58 @@ footer {
 }
 footer a.under { text-decoration-color: currentColor; }
 footer a.under:hover { color: var(--hot); text-decoration-color: var(--hot); }
+
+/* ─── additions for branch 4 (project page body content) ─── */
+
+/* markdown-embedded images in project bodies. They sit naturally in the flow,
+   full-width of the reading column, with a bit of breathing room. */
+.prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: calc(var(--line) * 1em * 1.5) 0 calc(var(--line) * 1em * 0.6);
+  background: #d8d8d6;
+}
+
+/* image captions if using the <figure>/<figcaption> pattern */
+.prose figure { margin: calc(var(--line) * 1em * 1.5) 0; }
+.prose figure img { margin: 0; }
+.prose figure figcaption {
+  opacity: var(--opacity-caption);
+  margin-top: 10px;
+  max-width: 60ch;
+}
+
+/* eleventy-img output: responsive <picture> wrappers get the same treatment as bare imgs */
+.prose picture {
+  display: block;
+  margin: calc(var(--line) * 1em * 1.5) 0 calc(var(--line) * 1em * 0.6);
+}
+.prose picture img {
+  margin: 0;
+}
+
+/* video/iframe embeds (from eleventy-plugin-embed-everything) */
+.prose iframe,
+.prose .embed-youtube,
+.prose .embed-vimeo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: calc(var(--line) * 1em * 1.5) 0;
+  border: 0;
+  background: var(--ink);
+}
+.prose .embed-youtube iframe,
+.prose .embed-vimeo iframe {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* horizontal rules in markdown \-\-\-; used for section breaks */
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: calc(var(--line) * 1em * 2) 0;
+}
