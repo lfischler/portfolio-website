@@ -1,44 +1,49 @@
+{# 
+  Sidebar nav.
+  
+  Renders the eleventy-navigation tree as flat groups: each top-level parent
+  (e.g. "Info", "Projects") becomes a group label, with its children as a
+  visible list of links underneath.
+  
+  Standalone top-level items (no children, e.g. a hypothetical "Blog" link)
+  render as a single link with no group label.
+#}
+
 {% set navPages = collections.all | eleventyNavigation %}
 
-{% macro renderNavListItem(entry) %}
-  {% if entry.children.length %}
-    <li>
-      <details
-        {%- for child in entry.children %}
-          {% if child.parent == entry.title and child.url == page.url %}
-            class="is-active"
-            open
-          {% endif %}
-        {% endfor %}
-      >
-        <summary>{{ entry.title }}</summary>
-        <ul role="list">
-          {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+<aside class="side">
+
+  <div class="drawing">
+    {# Placeholder — replaced with the rotation system in branch 5.
+       For now: drop one of your line drawings into src/images/drawings/
+       and update this path. #}
+    <img src="{{ '/images/drawings/drawing-1.jpg' | url }}" alt="Line drawing by Leanne Fischler">
+  </div>
+
+  <h1 class="name"><a href="/">Leanne Fischler</a></h1>
+  <p class="role">researcher and designer</p>
+
+  <nav>
+    {%- for entry in navPages -%}
+      {%- if entry.children.length -%}
+        {# Parent with children: render as group label + list of child links. #}
+        <p class="group">{{ entry.title }}</p>
+        <ul>
+          {%- for child in entry.children -%}
+            <li>
+              <a href="{{ child.url }}"{% if child.url == page.url %} aria-current="page"{% endif %}>{{ child.title }}</a>
+            </li>
+          {%- endfor -%}
         </ul>
-      </details>
-    </li>
-  {% else %}
-    <li>
-      <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page" {% endif %}>{{ entry.title }}</a>
-    </li>
-  {%- endif -%}
-{%- endmacro %}
+      {%- else -%}
+        {# Standalone top-level link, no group label. #}
+        <ul>
+          <li>
+            <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+          </li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
 
-<div class="sidebar">
-  
-  <div class="header">
-    <h1 class="header__title">
-      <a href="/">Leanne Fischler</a>
-    </h1>
-  </div>
-
-  <div class="nav-list">
-    <ul role="list">
-    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-    </ul>
-  </div>
-</div>
-
-
-
-
+</aside>

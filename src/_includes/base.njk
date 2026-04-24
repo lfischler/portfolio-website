@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Website and portfolio of Leanne Fischler"/>
+  <meta name="description" content="{{ description | default('Website and portfolio of Leanne Fischler') }}"/>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:opsz@6..12&family=Roboto&display=swap" rel="stylesheet">  
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="{{ '/css/style.css' | url | safe }}">
-  <title>{{ title | default("Default Title") }}</title>
+  <title>{% if title %}{{ title }} — Leanne Fischler{% else %}Leanne Fischler{% endif %}</title>
 </head>
 <body>
-  <div class="app-container">
-      <div class="sidebar">
-        {% include "nav-list.njk" %}
-      </div>
-      <div class="main-content">
-        <main class="content-container">
-          {{ content | safe }}
-        </main>
-        {% include "footer.njk" %}
-      </div>
+  <div class="page{% if wide %} wide{% endif %}">
+
+    {% include "nav-list.njk" %}
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
   </div>
 </body>
 </html>

@@ -1,0 +1,620 @@
+/* CSS Variables */
+:root {
+  --slate-tinted: #f3f5f7;
+  --slate-300: #cbd5e1;
+  --slate-600: #475569;
+  --black: #000000;
+  --primary-color: #2d3748; /* Slate color */
+  --secondary-color: #edf2f7; /* Light background color */
+  --highlight-color: #4a5568; /* Slightly lighter dark color */
+  --accent-color: #38a169; /* Green accent for buttons or highlights */
+  --hover-color: #e2e8f0; /* Lighter slate for hover states */
+}
+
+/* CSS Normalization */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--slate-300);
+}
+
+/* Utility Classes */
+
+.app-container { /* Define a grid container for the whole page */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  padding: 2rem;
+  max-width: 80rem;
+}
+
+.sidebar {
+  align-items: start;
+  flex-basis: 20rem;   /* was 16rem */
+  flex-grow: 0;        /* prevent it from stretching */
+  padding: 1.25rem;   /* optional: a little breathing room */
+}
+
+.main-content { /*content container*/
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 65%;
+  padding: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* Navigation */
+
+:where([role="list"]) { /* Navigation */
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.nav-list {
+  user-select: none;
+}
+
+/* Links */
+.nav-list a,
+.project-card__link {
+  text-decoration: none;
+  color: var(--slate-300);
+  display: block;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+/* Focus state */
+.nav-list a:focus,
+.project-card__link:focus {
+  outline: 2px solid var(--accent-color); /* You can use your accent color */
+  outline-offset: 2px;
+  color: var(--accent-color); /* Optional: color change for focus state */
+}
+
+/* Active state (when link is clicked or activated) */
+.nav-list a:active,
+.project-card__link:active {
+  color: var(--slate-600); /* Slightly darker color for the active state */
+}
+
+.nav-list summary { /*for an item with a dropdown*/
+  font-size: 1rem;
+  color: var(--black);
+}
+
+.nav-list details[open] > summary {
+  font-weight: inherit;
+}
+
+.nav-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-list a[aria-current="page"],
+.nav-list .is-active summary {
+  color: var(--slate-600);
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.nav-list a:hover,
+.nav-list summary:hover
+ {
+  color: var(--slate-300);
+}
+
+.nav-list details > [role="list"] {
+  padding-inline-start: 1.6rem;
+}
+
+.nav-list > li,
+.nav-list .is-active summary {
+  position: relative;
+}
+
+.nav-list > li > a[aria-current="page"]:before,
+.nav-list .is-active summary:before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  inset-inline-start: -2rem;
+  inset-block-start: 0;
+  inset-block-end: 0;
+}
+
+/* Header Styles */
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.header__title {
+  position: relative;
+  margin-bottom: 2rem;
+  font-family: "Roboto";
+  color: var(--black)
+}
+
+.footer {
+  grid-column: 1 / -1; /* Make the footer span across both columns */
+  flex-shrink: 0;
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.7rem; /* Adjust the project body font size as needed */
+  line-height: 1rem;
+  color: var(--slate-300);
+}
+
+.heading--main {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--slate-600);
+  font-family: "Roboto";
+}
+
+/* Profile Styles */
+
+
+.profile-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.profile__image-wrapper {
+  flex-basis: 16rem; 
+  flex-grow: 1;
+  margin: 3rem;
+}
+
+.profile__card {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+  padding: 2rem 0;
+}
+
+.profile__image-wrapper picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.profile__image-wrapper img {
+  width: 200px;
+  height: 200px;
+}
+
+.profile__text {
+  margin-bottom: 1rem;
+  color: var(--black);
+  line-height: 1.6;
+  margin-left: 1rem;
+}
+
+.profile__text--lead {
+  font-size: 1.8rem;
+  font-family: "Roboto";
+  line-height: 2.4rem;
+}
+
+.profile__text--highlight {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--slate-600);
+}
+
+.profile__text--emphasis {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.profile__link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Technologies Styles */
+
+.technologies__heading {
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--slate-600);
+  font-family: "Roboto";
+}
+
+.technologies__list {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 1.5rem;
+}
+
+.technologies__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.technologies__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.technologies__title {
+  font-weight: 400;
+  color: var(--slate-600);
+}
+
+/* Project Styles */
+
+.projects {
+  margin: 4rem auto 4rem auto;
+}
+
+.projects__heading {
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--black);
+  font-family: "Roboto";
+}
+
+.project__heading {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--black);
+  font-family: "Roboto";
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid var(--slate-300); /* Slightly lighter border */
+  border-radius: 2px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card__image-wrapper img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease 0s;
+}
+
+.project-card__image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.project-card__body {
+  padding: 1rem;
+  font-size: 0.8rem; /* Adjust the project body font size as needed */
+}
+
+.project-card__title {
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Roboto";
+}
+
+.project-card__title:hover {
+  text-decoration: underline;
+}
+
+.project-card__tags {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.project-card__tag {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  background-color: var(--slate-tinted);
+  color: var(--slate-600);
+}
+
+.project-card__summary {
+  margin-bottom: 1rem;
+  color: var(--slate-600);
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 300;
+  color: var(--slate-600);
+}
+
+.project-card__link-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.project-card__link:hover {
+  text-decoration: underline;
+}
+
+/* Project Page Styles */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto 4rem auto;
+}
+
+.project {
+  margin-bottom: 4rem;
+}
+
+.project__image-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.project__image-wrapper img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+}
+
+/* Prose Styles */
+.prose {
+  font-size: 1rem;
+  color: var(--slate-600);
+  line-height: 1.4rem;
+}
+
+.prose h1 {
+  font-size: 2rem;
+  font-family: "Roboto";
+  color: var(--black);
+  margin-top: 2.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.prose h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  font-family: "Roboto";
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  font-family: "Roboto";
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.prose h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  font-family: "Roboto";
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.prose ul,
+.prose ol {
+  max-width: 680px;       /* match paragraph width */
+  margin-bottom: 2rem;    /* same spacing as paragraphs */
+  line-height: 1.4rem;    /* unify with prose paragraphs */
+}
+
+.prose ul > li {
+  position: relative;
+  padding-left: 1.2em;    /* space for underscore */
+  margin-bottom: 0.5rem;  /* spacing between items */
+}
+
+.prose ul > li::before {
+  content: "_";           /* keep your underscore marker */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--slate-600);
+}
+
+/* Turn off native markers */
+.prose ol {
+  list-style: none;
+  counter-reset: item;
+  max-width: 680px;
+  margin-bottom: 2rem;
+  padding-inline-start: 1.5rem;   /* gutter */
+  line-height: 1.4rem;
+}
+
+.prose ol > li {
+  position: relative;
+  counter-increment: item;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2em;            /* match UL padding */
+}
+
+.prose ol > li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--slate-600);
+  font-weight: 600;               /* optional styling */
+}
+
+.prose p {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.prose img {
+  max-width: 100%;
+  margin-bottom: 1.6rem;
+}
+
+/* Table Styling */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;       /* clean grid */
+  margin: 2rem 0;                  /* vertical spacing around tables */
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem 1rem;           /* whitespace buffer inside cells */
+  border: 1px solid var(--slate-300); /* thin light gray outline */
+  text-align: left;
+  background-color: transparent;   /* keep rows transparent */
+}
+
+.prose th {
+  background-color: var(--slate-tinted); /* subtle header background */
+  font-weight: 600;
+  color: var(--slate-600);
+}
+
+/* About Styles */
+
+.bio {
+  margin: 0 auto 4rem auto;
+  max-width: 65ch;
+}
+
+/* Contact Styles */
+
+.contact__sub-heading {
+  padding: 0 1rem;
+  color: var(--slate-600);
+}
+
+/* Mobile First */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    flex-basis: 100%;
+    padding: 1rem;
+  }
+
+  .main-content {
+    flex-basis: 100%;
+    min-inline-size: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects__heading,
+  .project__heading {
+    font-size: 1.5rem;
+  }
+
+  .profile__image-wrapper {
+    flex-basis: 10rem;
+  }
+}
