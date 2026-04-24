@@ -11,6 +11,12 @@ tech:
 siteUrl: "https://superflux.in/index.php/work/refuge-for-resurgence/#"
 tags:
   - "creative"
+  - "play"
+kind: "Sculpture series"
+featuredIn:
+  - "creative"
+  - "play"
+featuredOrder: 2
 ---
 
 ## When? Why?

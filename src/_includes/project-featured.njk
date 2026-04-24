@@ -1,0 +1,36 @@
+{# 
+  Single featured project tile.
+  Expects two variables in scope:
+    project       — the project object (from collections)
+    positionClass — one of "r-1", "r-2", "r-3" (sets grid placement)
+#}
+
+<a href="{{ project.url }}" class="r {{ positionClass }}">
+  {% if project.data.image %}
+    <div class="img" style="background-image: url('{{ project.data.image | url }}');"></div>
+  {% else %}
+    <div class="img" style="background: #d8d8d6;"></div>
+  {% endif %}
+
+  <p class="meta">
+    <span>{{ project.data.yearDisplay or project.data.year }}</span>
+    {% if project.data.kind %}<span class="sep">·</span><span>{{ project.data.kind }}</span>{% endif %}
+  </p>
+
+  <p class="title">
+    {{ project.data.title | safe }}
+    {% if project.data.status %}<span class="status">— {{ project.data.status }}</span>{% endif %}
+  </p>
+
+  {% if project.data.summary %}
+  <p class="desc">{{ project.data.summary | safe }}</p>
+  {% endif %}
+
+  {% if project.data.tech and project.data.tech.length %}
+  <p class="tags">
+    {%- for t in project.data.tech -%}
+      <span>{{ t }}</span>
+    {%- endfor -%}
+  </p>
+  {% endif %}
+</a>

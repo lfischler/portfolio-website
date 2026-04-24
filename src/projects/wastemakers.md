@@ -7,9 +7,14 @@ tech:
   - "creative"
 siteUrl:
 repoUrl:
-tags: "creative"
+tags:
+  - "creative"
 year: "2016"
 skills: "Design, Research, Electronics, Prototyping"
+kind: "Kit / artefact"
+featuredIn:
+  - "creative"
+featuredOrder: 1
 ---
 
 ![Wastemakers Image](/images/wastemakers_3_resized.jpg)

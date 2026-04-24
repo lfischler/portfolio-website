@@ -1,0 +1,95 @@
+{# 
+  Shared category page template.
+  
+  Each category page (research-and-futures.njk, creative-responses.njk, etc.)
+  sets these variables in frontmatter or before include:
+  
+    pageHeading       — display heading (with optional <em>) e.g. "Research &amp; <em>futures</em>"
+    pageIntro         — short intro paragraph (plain text, italic markup ok)
+    categoryTags      — array of tag-collection names this page pulls from
+                        e.g. ["futures", "research"]
+  
+  This template:
+    - merges projects from all listed tag-collections, dedup'd
+    - splits into featured (those whose featuredIn includes any of categoryTags)
+    - and earlier (everything else)
+    - sorts featured by featuredOrder, earlier by year desc
+    - renders featured in repeating asymmetric 3-pattern (large-left, top-right, bottom-left)
+    - renders earlier as a table list
+#}
+
+{# 1. gather and dedup projects across all listed tag-collections #}
+{% set seenUrls = [] %}
+{% set allProjects = [] %}
+{% for tag in categoryTags %}
+  {% for p in collections[tag] %}
+    {% if p.url not in seenUrls %}
+      {% set seenUrls = (seenUrls.push(p.url), seenUrls) %}
+      {% set allProjects = (allProjects.push(p), allProjects) %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{# 2. split featured vs earlier
+   A project is featured if its featuredIn array overlaps with this page's categoryTags. #}
+{% set featured = [] %}
+{% set earlier = [] %}
+{% for p in allProjects %}
+  {% set isFeatured = false %}
+  {% if p.data.featuredIn %}
+    {% for tag in categoryTags %}
+      {% if tag in p.data.featuredIn %}
+        {% set isFeatured = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if isFeatured %}
+    {% set featured = (featured.push(p), featured) %}
+  {% else %}
+    {% set earlier = (earlier.push(p), earlier) %}
+  {% endif %}
+{% endfor %}
+
+{# 3. sort: featured by featuredOrder asc, earlier by year desc #}
+{% set featuredSorted = featured | sort(false, false, "data.featuredOrder") %}
+{% set earlierSorted = earlier | sort(true, false, "data.year") %}
+
+
+<p class="crumb"><a href="/projects/" class="under">Projects</a> &nbsp;/&nbsp; {{ title }}</p>
+<h1 class="heading">{{ pageHeading | safe }}</h1>
+<p class="intro">{{ pageIntro | safe }}</p>
+
+
+{% if featuredSorted.length %}
+<div class="recent">
+  {%- for p in featuredSorted -%}
+    {# repeating 3-pattern: position is (loop.index0 mod 3) + 1
+       so 1, 2, 3, 1, 2, 3, 1, 2, 3 ... matches r-1 / r-2 / r-3 in the CSS #}
+    {% set position = (loop.index0 % 3) + 1 %}
+    {% set project = p %}
+    {% set positionClass = "r-" + position %}
+    {% include "project-featured.njk" %}
+  {%- endfor -%}
+</div>
+{% endif %}
+
+
+{% if earlierSorted.length %}
+{% if featuredSorted.length %}
+<p class="label">Earlier work</p>
+{% endif %}
+<div class="list">
+  {%- for p in earlierSorted -%}
+    <a href="{{ p.url }}" class="entry">
+      <span class="yr">{{ p.data.yearDisplay or p.data.year }}</span>
+      <span class="title">{{ p.data.title | safe }}</span>
+      <span class="kind">{{ p.data.kind or "" }}</span>
+      <span class="tags">
+        {%- for t in p.data.tech or [] -%}
+          <span>{{ t }}</span>
+        {%- endfor -%}
+      </span>
+    </a>
+  {%- endfor -%}
+</div>
+{% endif %}

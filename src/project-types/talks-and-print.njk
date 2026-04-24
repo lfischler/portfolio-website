@@ -1,6 +1,7 @@
 ---
-title: "Talks and Print"
+title: "Talks & Print"
 layout: "base.njk"
+wide: true
 eleventyNavigation:
   key: Talks & Print
   parent: Projects
@@ -10,18 +11,8 @@ eleventyImport:
     - dissemination
 ---
 
-{% include "projects-intro-section.njk" %}
+{% set categoryTags = ["dissemination"] %}
+{% set pageHeading = "Talks &amp; <em>print</em>" %}
+{% set pageIntro = "Formal presentations, published articles, and educational media. The places where I share what I'm working through with wider audiences." %}
 
-<h2 class="projects__heading">Talks and Print</h2>
-
-<div class="prose lg:prose-lg mx-auto p-8">
-  {% renderTemplate "md" %}
-Here, I plan to collect the ways that I share my findings and experiences through formal presentations, published articles, and educational media.
-  {% endrenderTemplate %}
-</div>
-
-<div class="project-list">
-  {% asyncEach project in collections.dissemination | sort(attribute="data.year") | reverse %}
-    {% include "project-card.njk" %}
-  {% endeach %}
-</div>
+{% include "category-page.njk" %}

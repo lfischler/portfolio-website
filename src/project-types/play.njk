@@ -1,24 +1,18 @@
 ---
-title: "play"
+title: "Play"
 layout: "base.njk"
+wide: true
 eleventyNavigation:
   key: Play
   parent: Projects
-  order: 4
+  order: 5
+eleventyImport:
+  collections:
+    - play
 ---
 
-{% include "projects-intro-section.njk" %}
+{% set categoryTags = ["play"] %}
+{% set pageHeading = "<em>Play</em>" %}
+{% set pageIntro = "A space for experimentation, learning, and hands-on skills development outside formal projects." %}
 
-<h2 class="projects__heading">Play</h2>
-
-<div class="prose lg:prose-lg mx-auto p-8">
-  {% renderTemplate "md" %}
-A space for experimentation, learning, and hands-on skills development outside of formal projects.
-  {% endrenderTemplate %}
-</div>
-
-<div class="project-grid">
-  {% asyncEach project in collections.play | sort(attribute="data.year") | reverse %}
-    {% include "project-card.njk" %}
-  {% endeach %}
-</div>
+{% include "category-page.njk" %}
