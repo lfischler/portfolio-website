@@ -15,6 +15,12 @@ skills:
 tags:
   - "creative"
   - "play"
+  - "dissemination"
+kind: "Sculptural light"
+featuredIn:
+  - "creative"
+  - "dissemination"
+featuredOrder: 3
 ---
 
 https://vimeo.com/129161839

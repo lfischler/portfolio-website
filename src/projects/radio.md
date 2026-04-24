@@ -13,6 +13,10 @@ collaborators:
 skills: 
 tags:
   - "play"
+kind: "Hands-on making"
+featuredIn:
+  - "play"
+featuredOrder: 3
 ---
 
 ## Project Context

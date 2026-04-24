@@ -2,17 +2,22 @@
 title: "Prototyping Community Data Trusts: Exploring Governance, Trust, and Care in Small Places"
 summary: "An academic research project investigating the feasibility and limits of community data trusts in small, place-based settings, using prototyping and community engagement in Hoy and Walls to explore how data governance intersects with trust, care, and local social dynamics."
 image: "/images/method-diagram.png"
-imageAlt: "Abstract visual representing digital inequality and futures"
+imageAlt: "Methodology diagram"
 tech:
-  - "Academic Research"
-  - "Social Research"
-  - "Speculative Design"
+  - "Academic"
+  - "Social research"
+  - "Speculative design"
 year: "2025"
+kind: "Dissertation, MSc"
 collaborators: 
 skills: "Design, Research, Futures Thinking, Data Analysis"
 tags:
   - "research"
   - "dissemination"
+featuredIn:
+  - "research"
+featuredOrder: 1
+status: "recent"
 ---
 
 

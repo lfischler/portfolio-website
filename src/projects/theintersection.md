@@ -10,4 +10,9 @@ siteUrl: "https://superflux.in/index.php/work/the-intersection"
 repoUrl: 
 tags:
   - "futures"
+year: "2022"
+kind: "Studio contribution"
+featuredIn:
+  - "futures"
+featuredOrder: 3
 ---

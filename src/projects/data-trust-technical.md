@@ -13,6 +13,10 @@ year: "2024"
 collaborators: 
 tags:
   - "technical"
+kind: "Prototype"
+featuredIn:
+  - "technical"
+featuredOrder: 2
 ---
 
 ## Design Output
