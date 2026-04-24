@@ -1,5 +1,5 @@
 ---
-title: "Connect with Leanne Fischler"
+title: "Connect"
 layout: "infos.njk"
 eleventyNavigation:
   key: Connect
@@ -7,16 +7,21 @@ eleventyNavigation:
   order: 2
 ---
 
-I’m frequently visiting Glasgow, Edinburgh, and occasionally London. I’m always up for a walk and a chat and enjoy meeting interesting folk. If you’re visiting Orkney, don’t leave without saying “hello”!
+The best way to reach me is *[by email](mailto:your-email@example.com)*. I love to meet people, share ideas, and learn from them. And don't pass through Orkney without reaching out!
 
-## Ways to Connect Professionally
+<p class="label">Elsewhere</p>
 
-- The best way to **contact me** is via [email](mailto:hello@leannefischler.net).
-- I’m active on **[LinkedIn](https://www.linkedin.com/in/leannefischler/)** under `Leanne Fischler`.
-- As I continue to develop my data skills, you can find some of my work on **[GitHub](https://github.com/lfischler)** under `@lfischler`.
-- Follow me on **[Instagram](https://www.instagram.com/leannefischler)**.
-- Connect with me on **[Mastodon](https://assemblag.es/@leannefischler)** at `@leannefischler`.
-
-## Other Info
-
-Feel free to reach out to me through any of the methods above. I look forward to connecting!
+<div class="cv-list">
+  <div class="row">
+    <span class="when">GitHub</span>
+    <span class="what"><a href="https://github.com/lfischler" class="under">@lfischler</a></span>
+  </div>
+  <div class="row">
+    <span class="when">LinkedIn</span>
+    <span class="what"><a href="#" class="under">Leanne Fischler</a></span>
+  </div>
+  <div class="row">
+    <span class="when">ORCID</span>
+    <span class="what"><a href="#" class="under">0000-0000-0000-0000</a></span>
+  </div>
+</div>

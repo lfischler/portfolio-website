@@ -2,7 +2,9 @@
 layout: "base.njk"
 ---
 
-<div class="prose lg:prose-lg mx-auto p-8">
-  <h1>{{ title }}</h1>
+<p class="crumb"><a href="/info/" class="under">Info</a> &nbsp;/&nbsp; {{ title }}</p>
+<h1 class="heading">{{ title }}</h1>
+
+<div class="prose">
   {{ content | safe }}
 </div>
