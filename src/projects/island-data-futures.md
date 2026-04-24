@@ -2,18 +2,23 @@
 title: "Tools, trust, and small places: a community data trust in Hoy and Walls"
 summary: "A practice-based dissertation exploring whether a community data trust could work for household energy data in Hoy and Walls – and what the islands taught me about the limits of digital tools in small places."
 image: "/images/method-diagram.png"
-imageAlt: "Abstract visual representing digital inequality and futures"
+imageAlt: "Methodology diagram"
 tech:
-  - "Academic Research"
-  - "Social Research"
-  - "Speculative Design"
+  - "Academic"
+  - "Social research"
+  - "Speculative design"
 year: "2025"
 collaborators: 
 skills: "Design, Research, Futures Thinking, Data Analysis"
 tags:
   - "research"
   - "dissemination"
+featuredIn:
+  - "research"
+featuredOrder: 1
+status: "recent"
 ---
+
 
 
 ## Exploring Community Data Trusts in Small Places
