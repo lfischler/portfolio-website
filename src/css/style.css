@@ -419,3 +419,6 @@ footer a.under:hover { color: var(--hot); text-decoration-color: var(--hot); }
 .article .heading {
   max-width: none;
 }
+
+/* Reserve scrollbar space so layout doesn't shift on pages of different heights */
+html { scrollbar-gutter: stable; }
