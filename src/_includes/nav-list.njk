@@ -1,24 +1,37 @@
 {# 
   Sidebar nav.
   
-  Renders the eleventy-navigation tree as flat groups: each top-level parent
-  (e.g. "Info", "Projects") becomes a group label, with its children as a
-  visible list of links underneath.
-  
-  Standalone top-level items (no children, e.g. a hypothetical "Blog" link)
-  render as a single link with no group label.
+  Drawing logic:
+    - If frontmatter sets `drawing:`, use that and DON'T swap on load.
+    - Otherwise: pick a per-page random at build time, AND emit the full
+      pool to a <script> element so client-side JS can swap on load.
 #}
 
 {% set navPages = collections.all | eleventyNavigation %}
 
+{% set poolSize = drawings.all.length %}
+{% set seed = page.url | length %}
+{% set buildIndex = (seed * 7919 + (page.fileSlug | length) * 17) % poolSize if poolSize else 0 %}
+{% set buildPick = drawings.all[buildIndex] if poolSize else null %}
+
+{% if drawing %}
+  {% set drawingSrc = drawing %}
+  {% set canSwap = false %}
+{% else %}
+  {% set drawingSrc = buildPick %}
+  {% set canSwap = true %}
+{% endif %}
+
 <aside class="side">
 
+  {% if drawingSrc %}
   <div class="drawing">
-    {# Placeholder — replaced with the rotation system in branch 5.
-       For now: drop one of your line drawings into src/images/drawings/
-       and update this path. #}
-    <img src="{{ '/images/drawings/drawing-1.jpg' | url }}" alt="Line drawing by Leanne Fischler">
+    <img
+      src="{{ drawingSrc | url }}"
+      alt="Line drawing by Leanne Fischler"
+      {% if canSwap and drawings.all.length > 1 %}data-rotate="true"{% endif %}>
   </div>
+  {% endif %}
 
   <h1 class="name"><a href="/">Leanne Fischler</a></h1>
   <p class="role">researcher and designer</p>
@@ -26,7 +39,6 @@
   <nav>
     {%- for entry in navPages -%}
       {%- if entry.children.length -%}
-        {# Parent with children: render as group label + list of child links. #}
         <p class="group">{{ entry.title }}</p>
         <ul>
           {%- for child in entry.children -%}
@@ -36,7 +48,6 @@
           {%- endfor -%}
         </ul>
       {%- else -%}
-        {# Standalone top-level link, no group label. #}
         <ul>
           <li>
             <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
@@ -47,3 +58,25 @@
   </nav>
 
 </aside>
+
+{# Pool embedded as JSON in a script tag — avoids attribute-encoding issues. #}
+{% if drawings.all.length > 1 %}
+<script id="drawing-pool" type="application/json">{{ drawings.all | dump | safe }}</script>
+<script>
+  (function () {
+    var img = document.querySelector('.drawing img[data-rotate]');
+    var poolEl = document.getElementById('drawing-pool');
+    if (!img || !poolEl) return;
+    try {
+      var pool = JSON.parse(poolEl.textContent);
+      if (!Array.isArray(pool) || pool.length < 2) return;
+      var current = img.getAttribute('src');
+      var candidates = pool.filter(function (p) { return p !== current; });
+      var pick = candidates[Math.floor(Math.random() * candidates.length)];
+      var pre = new Image();
+      pre.onload = function () { img.src = pick; };
+      pre.src = pick;
+    } catch (e) {}
+  })();
+</script>
+{% endif %}
