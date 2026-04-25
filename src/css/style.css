@@ -403,3 +403,19 @@ footer a.under:hover { color: var(--hot); text-decoration-color: var(--hot); }
   border-top: 1px solid var(--rule);
   margin: calc(var(--line) * 1em * 2) 0;
 }
+
+/* ─── mobile sidebar fix ─── */
+
+@media (max-width: 900px) {
+  .side {
+    position: static;
+  }
+  .heading {
+    max-width: none;
+  }
+}
+
+/* on project pages specifically, allow titles to run full column width at all sizes */
+.article .heading {
+  max-width: none;
+}
