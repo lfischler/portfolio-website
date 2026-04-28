@@ -1,4 +1,5 @@
 node_modules/
 /public
 /WIP-and-unused
-2023_Eleventy-Static.code-workspace
+2023_Eleventy-Static.code-workspace/envs
+/envs

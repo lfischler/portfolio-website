@@ -40,6 +40,14 @@ export default function (eleventyConfig) {
   // Shortcodes
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    return new Date(dateObj).toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+  });
+
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", async (src, alt, sizes) => {
     let metadata = await Image(`./src${src}`, {
       widths: [300, 800, null],
