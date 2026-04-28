@@ -1,16 +1,18 @@
 ---
-title: "play"
+title: "Play"
 layout: "base.njk"
+wide: true
 eleventyNavigation:
   key: Play
   parent: Projects
-  order: 4
+  order: 5
+eleventyImport:
+  collections:
+    - play
 ---
 
-<h2 class="projects__heading">Play</h2>
+{% set categoryTags = ["play"] %}
+{% set pageHeading = "<em>Play</em>" %}
+{% set pageIntro = "A place for experimentation and building things, making for the sake of making." %}
 
-<div class="project-grid">
-  {% asyncEach project in collections.play | sort(attribute="data.year") | reverse %}
-    {% include "project-card.njk" %}
-  {% endeach %}
-</div>
+{% include "category-page.njk" %}

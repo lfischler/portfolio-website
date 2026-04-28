@@ -1,16 +1,19 @@
 ---
-title: "Creative Responses Leanne Fischler"
+title: "Creative Responses"
 layout: "base.njk"
+wide: true
 eleventyNavigation:
   key: Creative Responses
   parent: Projects
   order: 2
+eleventyImport:
+  collections:
+    - creative
+drawing: /images/drawings/graham-vie.jpg
 ---
 
-<h2 class="projects__heading">Creative Responses</h2>
+{% set categoryTags = ["creative"] %}
+{% set pageHeading = "Creative <em>responses</em>" %}
+{% set pageIntro = "Physical, visual, and handmade outputs of my research. Where the enquiry becomes a designed artefact or installation." %}
 
-<div class="project-list">
-  {% asyncEach project in collections.creative | sort(attribute="data.year") | reverse %}
-    {% include "project-card.njk" %}
-  {% endeach %}
-</div>
+{% include "category-page.njk" %}

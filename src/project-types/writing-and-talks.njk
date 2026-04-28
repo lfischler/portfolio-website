@@ -1,0 +1,18 @@
+---
+title: "Writing & Talks"
+layout: "base.njk"
+wide: true
+eleventyNavigation:
+  key: Writing & Talks
+  parent: Projects
+  order: 3
+eleventyImport:
+  collections:
+    - dissemination
+---
+
+{% set categoryTags = ["dissemination"] %}
+{% set pageHeading = "Talks &amp; <em>print</em>" %}
+{% set pageIntro = "Presentations and published writing where I've shared what I'm working on." %}
+
+{% include "category-page.njk" %}

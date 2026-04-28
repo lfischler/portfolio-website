@@ -14,7 +14,10 @@ collaborators:
 skills: "Design, Research, Web Development, Data Analysis"
 tags:
   - "technical"
-  - "social"
+kind: "Web app"
+featuredIn:
+  - "technical"
+featuredOrder: 1
 ---
 
 ## Project Description

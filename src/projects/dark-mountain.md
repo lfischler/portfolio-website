@@ -10,4 +10,8 @@ repoUrl:
 year: 2016
 tags:
   - "dissemination"
+kind: "Publication"
+featuredIn:
+  - "dissemination"
+featuredOrder: 2
 ---

@@ -1,44 +1,82 @@
+{# 
+  Sidebar nav.
+  
+  Drawing logic:
+    - If frontmatter sets `drawing:`, use that and DON'T swap on load.
+    - Otherwise: pick a per-page random at build time, AND emit the full
+      pool to a <script> element so client-side JS can swap on load.
+#}
+
 {% set navPages = collections.all | eleventyNavigation %}
 
-{% macro renderNavListItem(entry) %}
-  {% if entry.children.length %}
-    <li>
-      <details
-        {%- for child in entry.children %}
-          {% if child.parent == entry.title and child.url == page.url %}
-            class="is-active"
-            open
-          {% endif %}
-        {% endfor %}
-      >
-        <summary>{{ entry.title }}</summary>
-        <ul role="list">
-          {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+{% set poolSize = drawings.all.length %}
+{% set seed = page.url | length %}
+{% set buildIndex = (seed * 7919 + (page.fileSlug | length) * 17) % poolSize if poolSize else 0 %}
+{% set buildPick = drawings.all[buildIndex] if poolSize else null %}
+
+{% if drawing %}
+  {% set drawingSrc = drawing %}
+  {% set canSwap = false %}
+{% else %}
+  {% set drawingSrc = buildPick %}
+  {% set canSwap = true %}
+{% endif %}
+
+<aside class="side">
+
+  {% if drawingSrc %}
+  <div class="drawing">
+    <img
+      src="{{ drawingSrc | url }}"
+      alt="Line drawing by Leanne Fischler"
+      {% if canSwap and drawings.all.length > 1 %}data-rotate="true"{% endif %}>
+  </div>
+  {% endif %}
+
+  <h1 class="name"><a href="/">Leanne Fischler</a></h1>
+  <p class="role">researcher and designer</p>
+
+  <nav>
+    {%- for entry in navPages -%}
+      {%- if entry.children.length -%}
+        <p class="group">{{ entry.title }}</p>
+        <ul>
+          {%- for child in entry.children -%}
+            <li>
+              <a href="{{ child.url }}"{% if child.url == page.url %} aria-current="page"{% endif %}>{{ child.title }}</a>
+            </li>
+          {%- endfor -%}
         </ul>
-      </details>
-    </li>
-  {% else %}
-    <li>
-      <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page" {% endif %}>{{ entry.title }}</a>
-    </li>
-  {%- endif -%}
-{%- endmacro %}
+      {%- else -%}
+        <ul>
+          <li>
+            <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+          </li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
 
-<div class="sidebar">
-  
-  <div class="header">
-    <h1 class="header__title">
-      <a href="/">Leanne Fischler</a>
-    </h1>
-  </div>
+</aside>
 
-  <div class="nav-list">
-    <ul role="list">
-    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-    </ul>
-  </div>
-</div>
-
-
-
-
+{# Pool embedded as JSON in a script tag — avoids attribute-encoding issues. #}
+{% if drawings.all.length > 1 %}
+<script id="drawing-pool" type="application/json">{{ drawings.all | dump | safe }}</script>
+<script>
+  (function () {
+    var img = document.querySelector('.drawing img[data-rotate]');
+    var poolEl = document.getElementById('drawing-pool');
+    if (!img || !poolEl) return;
+    try {
+      var pool = JSON.parse(poolEl.textContent);
+      if (!Array.isArray(pool) || pool.length < 2) return;
+      var current = img.getAttribute('src');
+      var candidates = pool.filter(function (p) { return p !== current; });
+      var pick = candidates[Math.floor(Math.random() * candidates.length)];
+      var pre = new Image();
+      pre.onload = function () { img.src = pick; };
+      pre.src = pick;
+    } catch (e) {}
+  })();
+</script>
+{% endif %}

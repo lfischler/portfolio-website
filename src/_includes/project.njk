@@ -1,38 +1,63 @@
 ---
 layout: "base.njk"
+wide: true
 ---
 
-<div class="project">
+<article class="article">
 
-  <!-- Page Title -->
-  <h2 class="project__heading">{{ title }}</h2>
+  <p class="crumb">
+    <a href="/projects/" class="under">Projects</a> &nbsp;/&nbsp; {{ title }}
+  </p>
 
-  <!-- Project Image -->
-  {% if image %}
-    <div class="project__image-wrapper">
-      {% EleventyImage image, imageAlt or title, "(min-width: 30em) 50vw, 100vw" %}
-    </div>
-  {% endif %}
+  <h1 class="heading">{{ title }}</h1>
 
-  <!-- Project Summary (Markdown-friendly) -->
   {% if summary %}
-    <div class="profile__text profile__text--lead">
-      {{ summary | markdown | safe }}
-    </div>
+  <p class="summary">{{ summary | safe }}</p>
   {% endif %}
 
-  <!-- Project Details List -->
-  <div class="project__content prose">
-    <ul>
-      {% if year %}<li><b>Year:</b> {{ year }}</li>{% endif %}
-      {% if client %}<li><b>Client:</b> {{ client }}</li>{% endif %}
-      {% if skills %}<li><b>Skills:</b> {{ skills }}</li>{% endif %}
-      {% if repoUrl %}<li><b>Project Repo:</b> <a href="{{ repoUrl }}">{{ repoUrl }}</a></li>{% endif %}
-      {% if siteUrl %}<li><b>Project Link:</b> <a href="{{ siteUrl }}">{{ siteUrl }}</a></li>{% endif %}
-      {% if collaborators %}<li><b>Collaborators:</b> {{ collaborators }}</li>{% endif %}
-    </ul>
+  <div class="meta-block">
 
-    <!-- Main Body Content (Markdown) -->
-    {{ content | markdown | safe }}
+    {% if year %}
+      <span class="k">Year</span>
+      <span class="v">{{ yearDisplay or year }}</span>
+    {% endif %}
+
+    {% if kind %}
+      <span class="k">Kind</span>
+      <span class="v">{{ kind }}</span>
+    {% endif %}
+
+    {% if skills %}
+      <span class="k">Skills</span>
+      <span class="v"><em>{{ skills }}</em></span>
+    {% endif %}
+
+    {% if tech and tech.length %}
+      <span class="k">Tags</span>
+      <span class="v tags">
+        {%- for t in tech -%}<span>{{ t }}</span>{%- endfor -%}
+      </span>
+    {% endif %}
+
+    {% if collaborators %}
+      <span class="k">With</span>
+      <span class="v">{{ collaborators }}</span>
+    {% endif %}
+
+    {% if siteUrl %}
+      <span class="k">Visit</span>
+      <span class="v"><a href="{{ siteUrl }}" class="under">{{ siteUrl | replace("https://", "") | replace("http://", "") | truncate(50) }}</a></span>
+    {% endif %}
+
+    {% if repoUrl %}
+      <span class="k">Code</span>
+      <span class="v"><a href="{{ repoUrl }}" class="under">{{ repoUrl | replace("https://", "") | replace("http://", "") | truncate(50) }}</a></span>
+    {% endif %}
+
   </div>
-</div>
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+</article>

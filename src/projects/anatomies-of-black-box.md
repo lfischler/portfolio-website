@@ -16,6 +16,10 @@ tags:
   - "technical"
   - "research"
   - "dissemination"
+kind: "Essay"
+featuredIn:
+  - "research"
+featuredOrder: 2
 ---
 
 ### Project Context: Where AI Meets Energy

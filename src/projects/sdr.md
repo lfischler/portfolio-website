@@ -8,10 +8,12 @@ tech:
   - "Community Work"
 siteUrl: "https://www.vam.ac.uk/dundee/whatson/exhibitions/scottish-design-relay"
 repoUrl: 
-tags: "communities"
+tags:
+  - "communities"
 year: 2018
 collaborators: "V&A Dundee, The Galgael Trust, 4C Design, The Orkney Furniture Maker, Icecream Architecture, Shetland Arts, Amy Gear"
-skills: 
+skills:
+kind: "Programme of events"
 ---
 
 ### Problem Solved

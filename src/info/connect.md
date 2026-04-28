@@ -1,5 +1,5 @@
 ---
-title: "Connect with Leanne Fischler"
+title: "Connect"
 layout: "infos.njk"
 eleventyNavigation:
   key: Connect
@@ -7,12 +7,29 @@ eleventyNavigation:
   order: 2
 ---
 
-I’m frequently visiting Glasgow, Edinburgh, and occasionally London. I’m always up for a walk and a chat and enjoy meeting interesting folk. If you’re visiting Orkney, don’t leave without saying “hello”!
+The best way to reach me is *[by email](mailto:hello@leannefischler.net)*. I love to meet people, share ideas, and learn from them. And don't pass through Orkney without reaching out!
 
-## Ways to Connect
+<p class="label">Elsewhere</p>
 
-- The best way to **contact me** is via [email](mailto:hello@leannefischler.net).
-- Follow me on **[Instagram](https://www.instagram.com/leannefischler)**.
-- I’m a wee bit active on **[LinkedIn](https://www.linkedin.com/in/leannefischler/)**.
-- As I continue to develop my data skills, you can find some of my work on **[GitHub](https://github.com/lfischler)**.
-- Connect with me on **[Mastodon](https://assemblag.es/@leannefischler)**.
+<div class="cv-list">
+  <div class="row">
+    <span class="when">Email</span>
+    <span class="what">The best way to <strong>contact me</strong> is via <a href="mailto:hello@leannefischler.net">email</a>.</span>
+  </div>
+  <div class="row">
+    <span class="when">LinkedIn</span>
+    <span class="what">I’m active on <strong><a href="https://www.linkedin.com/in/leannefischler/">LinkedIn</a></strong> under <code>Leanne Fischler</code>.</span>
+  </div>
+  <div class="row">
+    <span class="when">GitHub</span>
+    <span class="what">As I continue to develop my data skills, you can find some of my work on <strong><a href="https://github.com/lfischler">GitHub</a></strong> under <code>@lfischler</code>.</span>
+  </div>
+  <div class="row">
+    <span class="when">Instagram</span>
+    <span class="what">Follow me on <strong><a href="https://www.instagram.com/leannefischler">Instagram</a></strong>.</span>
+  </div>
+  <div class="row">
+    <span class="when">Mastodon</span>
+    <span class="what">Connect with me on <strong><a href="https://assemblag.es/@leannefischler">Mastodon</a></strong> at <code>@leannefischler</code>.</span>
+  </div>
+</div>

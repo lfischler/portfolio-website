@@ -1,0 +1,19 @@
+---
+title: "Research & Speculation"
+layout: "base.njk"
+wide: true
+eleventyNavigation:
+  key: Research & Speculation
+  parent: Projects
+  order: 1
+eleventyImport:
+  collections:
+    - futures
+    - research
+---
+
+{% set categoryTags = ["futures", "research"] %}
+{% set pageHeading = "Research &amp; <em>futures</em>" %}
+{% set pageIntro = "Research projects and speculative work examining how things are and imagining how they might be otherwise." %}
+
+{% include "category-page.njk" %}

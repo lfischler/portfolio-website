@@ -14,6 +14,7 @@ collaborators: Rebecca Smith, Kirsty Sneddon
 skills: 
 tags:
   - "creative"
+kind: "Critical design"
 ---
 
 https://vimeo.com/114968608

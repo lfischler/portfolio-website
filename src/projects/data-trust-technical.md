@@ -13,6 +13,10 @@ year: "2024"
 collaborators: 
 tags:
   - "technical"
+kind: "Prototype"
+featuredIn:
+  - "technical"
+featuredOrder: 2
 ---
 
 This is the technical companion to my dissertation project on community data trusts in Hoy and Walls. The research side of the project (what I was trying to find out, what people on the islands made of it, and what I came away thinking) is written up in [Tools, trust, and small places]({{ '/projects/island-data-futures/' | url }}). This one is about what I actually built, the choices that went into it, and what the build itself revealed.
