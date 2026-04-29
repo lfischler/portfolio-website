@@ -17,6 +17,7 @@ kind: "Hands-on making"
 featuredIn:
   - "play"
 featuredOrder: 3
+status:
 ---
 
 ## Project Context

@@ -3,12 +3,15 @@ title: "Sculptures from Post-Anthropocene Islands"
 summary: "Sculptural contributions to Superflux's Refuge for Resurgence (2021)"
 image: "/images/cutlery/cutlery-30.jpg"
 imageAlt: "Sculptural cutlery"
-year: 2020
+year: 2021
 tech:
   - "Futures"
   - "Design"
   - "Craft"
+collaborators: "Superflux"
 siteUrl: "https://superflux.in/index.php/work/refuge-for-resurgence/#"
+repoUrl:
+skills: "Critical making, sculpture, craft"
 tags:
   - "creative"
   - "play"
@@ -17,6 +20,7 @@ featuredIn:
   - "creative"
   - "play"
 featuredOrder: 2
+status:
 ---
 
 ## When? Why?

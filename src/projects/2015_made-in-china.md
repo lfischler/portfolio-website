@@ -11,15 +11,15 @@ siteUrl:
 repoUrl: 
 year: "2015"
 collaborators: 
+status:
 skills: 
 tags:
   - "creative"
   - "play"
-  - "dissemination"
 kind: "Sculptural light"
 featuredIn:
   - "creative"
-  - "dissemination"
+  - "play"
 featuredOrder: 3
 ---
 

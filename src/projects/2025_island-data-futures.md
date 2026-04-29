@@ -8,6 +8,8 @@ tech:
   - "Social research"
   - "Speculative design"
 year: "2025"
+siteUrl:
+repoUrl:
 collaborators: 
 skills: "Design, Research, Futures Thinking, Data Analysis"
 tags:
@@ -15,6 +17,7 @@ tags:
   - "dissemination"
 featuredIn:
   - "research"
+  - "dissemination"
 featuredOrder: 1
 status: "recent"
 ---

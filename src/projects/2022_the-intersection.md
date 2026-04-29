@@ -8,11 +8,15 @@ tech:
   - "Design"
 siteUrl: "https://superflux.in/index.php/work/the-intersection"
 repoUrl: 
+collaborators: "Superflux, Ed Lewis, Matthew Edgson"
 tags:
   - "futures"
+  - "creative"
 year: "2022"
 kind: "Studio contribution"
 featuredIn:
-  - "futures"
+  - "creative"
 featuredOrder: 3
+status:
+skills: "Critical making, speculative futures, craft."
 ---

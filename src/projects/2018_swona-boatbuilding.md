@@ -10,13 +10,14 @@ siteUrl:
 repoUrl:
 year: 2018
 collaborators: "Archipelago Folkschool"
-skills: 
+skills: "Woodworking, boat building"
 tags:
   - "play"
 kind: "Hands-on learning"
 featuredIn:
   - "play"
 featuredOrder: 1
+status:
 ---
 
 Last week I was out on the Taynish Peninsual on the west coast of Scotland with boatbuilder Ben Wilde, and artists Ruth Little and Claire Cunningham. We had five days to build a wooden boat.

@@ -13,8 +13,9 @@ year: "2016"
 skills: "Design, Research, Electronics, Prototyping"
 kind: "Kit / artefact"
 featuredIn:
-  - "creative"
-featuredOrder: 1
+featureOrder:
+status:
+collaborators:
 ---
 
 ![Wastemakers Image](/images/wastemakers_3_resized.jpg)

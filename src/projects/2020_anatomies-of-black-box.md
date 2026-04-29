@@ -20,6 +20,7 @@ kind: "Essay"
 featuredIn:
   - "research"
 featuredOrder: 2
+status:
 ---
 
 ### Project Context: Where AI Meets Energy

@@ -15,6 +15,8 @@ skills:
 tags:
   - "creative"
 kind: "Critical design"
+featuredIn:
+status:
 ---
 
 https://vimeo.com/114968608

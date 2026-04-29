@@ -2,16 +2,19 @@
 title: "Publication in Dark Mountain Project"
 summary: "Issue 8"
 image: "/images/boat_5_resized.jpg"
-imageAlt: "Screenshot of data visualisation"
+imageAlt: "Image of writing"
 tech:
   - "Research"
 siteUrl:
 repoUrl:
 year: 2016
+collaborators: Tom Smith
+skills: "Writing"
+satus:
 tags:
   - "dissemination"
 kind: "Publication"
 featuredIn:
   - "dissemination"
-featuredOrder: 2
+featuredOrder: 99
 ---
