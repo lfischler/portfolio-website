@@ -1,5 +1,5 @@
-# Eleventy Portfolio
+# leannefischler.net
 
-A portfolio site built with [Eleventy](https://www.11ty.dev/).
+Personal website and digital garden of Leanne Fischler.
 
-Credit for the starting code goes to freecodecamp: [Learn the Eleventy Static Site Generator by Building and Deploying a Portfolio Website](https://www.freecodecamp.org/news/learn-eleventy/)
+Built with [Eleventy](https://www.11ty.dev/), hosted on GitHub, deployed via Netlify.
