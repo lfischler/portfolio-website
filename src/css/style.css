@@ -380,21 +380,19 @@ footer a.under:hover { color: var(--hot); text-decoration-color: var(--hot); }
 }
 
 /* video/iframe embeds (from eleventy-plugin-embed-everything) */
-.prose iframe,
+.prose .eleventy-plugin-vimeo-embed,
+.prose .eleventy-plugin-youtube-embed,
 .prose .embed-youtube,
 .prose .embed-vimeo {
-  display: block;
   width: 100%;
-  aspect-ratio: 16/9;
   margin: calc(var(--line) * 1em * 1.5) 0;
-  border: 0;
-  background: var(--ink);
 }
+
+.prose .eleventy-plugin-vimeo-embed iframe,
+.prose .eleventy-plugin-youtube-embed iframe,
 .prose .embed-youtube iframe,
 .prose .embed-vimeo iframe {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+  border: 0;
 }
 
 /* horizontal rules in markdown \-\-\-; used for section breaks */
