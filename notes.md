@@ -8,6 +8,7 @@ Never push directly to main from the command line.
 
 ## Known issues
 - [ ] @11ty/eleventy-img needs updating 2.0.1 → 6.0.4 (breaking change — do in feature branch, test locally first)
+- [ ] Update Node.js version to 22 — add `.node-version` file containing `22` to repo root, or add `NODE_VERSION = "22"` to `netlify.toml`
 
 ## Content to add or complete
 - [ ] Go through all project frontmatter and ensure every field is present and filled out
