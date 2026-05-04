@@ -7,6 +7,7 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import embeds from "eleventy-plugin-embed-everything";
 import matter from "gray-matter";
+import implicitFigures from "markdown-it-implicit-figures";
 
 export default function (eleventyConfig) {
   // Markdown library
@@ -14,7 +15,8 @@ export default function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true
-  });
+  });  
+  mdLib.use(implicitFigures, { figcaption: true });
   eleventyConfig.setLibrary("md", mdLib);
 
   // Markdown filter (so you can use {{ something | markdown }} in Nunjucks)
