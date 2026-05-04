@@ -7,11 +7,13 @@
 
 <a href="{{ project.url }}" class="r {{ positionClass }}">
   {% if project.data.image %}
-    <div class="img" style="background-image: url('{{ project.data.image | url }}');"></div>
+    <div class="img">
+      <img src="{{ project.data.image | cloudinaryUrl(600) }}" alt="{{ project.data.imageAlt or project.data.title }}" loading="lazy">
+    </div>
   {% else %}
-    <div class="img" style="background: #d8d8d6;"></div>
+    <div class="img img--empty"></div>
   {% endif %}
-
+  
   <p class="meta">
     <span>{{ project.data.yearDisplay or project.data.year }}</span>
     {% if project.data.kind %}<span class="sep">·</span><span>{{ project.data.kind }}</span>{% endif %}

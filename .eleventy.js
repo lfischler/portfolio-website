@@ -19,6 +19,12 @@ export default function (eleventyConfig) {
   mdLib.use(implicitFigures, { figcaption: true });
   eleventyConfig.setLibrary("md", mdLib);
 
+  eleventyConfig.addFilter("cloudinaryUrl", (src, width) => {
+    if (!src) return "";
+    const w = width || 800;
+    return `https://res.cloudinary.com/diwlxq34b/image/upload/w_${w},f_auto,q_auto/portfolio${src}`;
+  });
+  
   // Markdown filter (so you can use {{ something | markdown }} in Nunjucks)
   eleventyConfig.addFilter("markdown", (content) => {
     return mdLib.render(content);
@@ -51,11 +57,17 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", async (src, alt, sizes) => {
-    let metadata = await Image(`./src${src}`, {
+    const cloudinaryBase = "https://res.cloudinary.com/diwlxq34b/image/upload";
+    const remoteSrc = `${cloudinaryBase}/portfolio${src}`;
+    let metadata = await Image(remoteSrc, {
       widths: [300, 800, null],
       formats: ["avif", "jpeg"],
       urlPath: "/images/",
-      outputDir: "./public/images/"
+      outputDir: "./public/images/",
+      cacheOptions: {
+        duration: "1d",
+        directory: ".cache",
+      }
     });
     return Image.generateHTML(metadata, { alt, sizes, loading: "lazy", decoding: "async" });
   });

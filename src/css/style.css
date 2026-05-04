@@ -237,10 +237,20 @@ h2.section,
 .r .img {
   width: 100%;
   aspect-ratio: 4/3;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+  background: #d8d8d6;
   margin-bottom: 14px;
   transition: opacity 180ms ease;
+}
+.r .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.r .img--empty {
+  background: #d8d8d6;
 }
 .r:hover .img { opacity: 0.88; }
 .r:hover .title { color: var(--hot); }
