@@ -7,7 +7,6 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import embeds from "eleventy-plugin-embed-everything";
 import matter from "gray-matter";
-import implicitFigures from "markdown-it-implicit-figures";
 
 export default function (eleventyConfig) {
   // Markdown library
@@ -16,7 +15,25 @@ export default function (eleventyConfig) {
     breaks: true,
     linkify: true
   });  
-  mdLib.use(implicitFigures, { figcaption: true });
+  mdLib.renderer.rules.image = (tokens, idx) => {
+    const token = tokens[idx];
+    const src = token.attrGet("src");
+    const alt = token.content;
+    const cloudinaryBase = "https://res.cloudinary.com/diwlxq34b/image/upload";
+    const remoteSrc = `${cloudinaryBase}/portfolio${src}`;
+    
+    return `<figure>
+      <img
+        src="${remoteSrc.replace('/upload/', '/upload/w_800,f_auto,q_auto/')}"
+        srcset="${remoteSrc.replace('/upload/', '/upload/w_300,f_auto,q_auto/')} 300w,
+                ${remoteSrc.replace('/upload/', '/upload/w_800,f_auto,q_auto/')} 800w,
+                ${remoteSrc.replace('/upload/', '/upload/w_1200,f_auto,q_auto/')} 1200w"
+        sizes="(min-width: 30em) 80vw, 100vw"
+        alt="${alt}"
+        loading="lazy">
+      ${alt ? `<figcaption>${alt}</figcaption>` : ''}
+    </figure>`;
+  };
   eleventyConfig.setLibrary("md", mdLib);
 
   eleventyConfig.addFilter("cloudinaryUrl", (src, width) => {
