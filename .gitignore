@@ -4,3 +4,8 @@ node_modules/
 2023_Eleventy-Static.code-workspace/envs
 /envs
 website-writing-guide.md
+<<<<<<< HEAD
+=======
+/.cache
+>>>>>>> parent of 804c8bd (Remove local images from git tracking - now hosted on Cloudinary)
+/src/images
