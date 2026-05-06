@@ -1,17 +1,16 @@
 ---
-title: "The Anti-Consumerist Handbag: critical design exploration goes viral"
-summary: "This university project was featured in The Metro, BBC Technology and on BBC Radio 4"
+title: "'Excuse me? Excuse you!': an anti-consumerist handbag"
+summary: "A critical design project from 2014 that ended up on the front page of the Metro."
 image: "/images/handbag-logos.jpg"
 imageAlt: "Handbag with logos"
 tech:
-  - "Craft"
   - "Creative Response"
   - "Critical Design"
 siteUrl: 
 repoUrl: 
 year: "2014"
 collaborators: Rebecca Smith, Kirsty Sneddon
-skills: 
+skills: "Critical design"
 tags:
   - "creative"
 kind: "Critical design"
@@ -19,26 +18,21 @@ featuredIn:
 status:
 ---
 
+## What is it?
+'Excuse me? Excuse you!' is a handcrafted messenger bag that shouts at you in public places if you're about to spend money. Alongside co-designers Kirsty Sneddon and Rebecca Smith, we wanted to explore the association between consumerism and positive social value. What better way than to turn that on its head: a cockney voice loudly and publicly embarassing you whenever you try to buy something? At first, only you can hear its dissuasive whispers when you remove your credit card. If you proceed, expect stares from those around you. The sound clips play randomly from three pools: the first contains subtly persuasive whispers, the middle one has an exasperated tone and the third grouping makes full use of the public embarrassment potential and brazenly chides you at full volume in the shop.
+
+The bag itself was handmade from found leather, our goal was to select a material that people could develop a relationship with: as scuffs in the leather accumulate memories and experiences, the user might slowly develop a relationship with that cheeky and critical voice, that old friend trying to help them save money.
+
+![Excuse me? Excuse you! is a handbag that dissuades you from spending money](/images/handbag-final.jpg)
+
+![The handbag shouts at you in public places if you remove your credit card](/images/handbag-ogi.jpg)
+
 https://vimeo.com/114968608
 
-## Project Overview
-We have succumbed to an age where the value of money has deteriorated and society as a whole has become materialistic and object-orientated.
+## How it got into the world
+Over a year after the Anti-Consumerist Handbag was completed and exhibited, my collaborators and I did a short interview on a local radio show as part of an event. During this interview, we mentioned the Anticonsumerist Handbag and the meaning behind it. The day after the show aired, we were surprised to get a message saying that our faces were on the front cover of the Metro. The design had been picked up by a number of mass media sources and was scattered across newspapers throughout the country. The timing was interesting: the media flurry all came because this was the lead up to Christmas, with much of the commentary focused on Christmas (over)shopping. We were even surprised to receive an invitation to visit a TV studio in London to speak about our work. The most telling moment for me about how this critical design project would fit into the world as it is today, was when BBC's consumer rights program You and Yours featured the design... and then suggested that such a product might even contain advertising in future!
 
-‘Excuse me? Excuse you!’ is an attentive character. Embodied within a hand crafted messenger bag, its evocative whispers make spending money emotionally harder. Inverting the value given to consumerism, the concept creates a negative association with spending.
-
-With every scuff in the leather, your relationship with the bag grows; it is a piece of fashion that never becomes obsolete. Although cheeky and critical, ‘Excuse me? Excuse you!’ is an old friend looking out for our best interests.
-
-![the finished handbag](/images/handbag-final.jpg)
-
-![the handbag in use](/images/handbag-ogi.jpg)
-
-## Project Context
-This project was created as part of a university module exploring the potential for design to prompt critical thought. We wanted to explore the contrast between mass production, consumerism and wellbeing. 
-
-## Publicity
-Over a year after the Anti-Consumerist Handbag was completed and exhibited, my collaborators and I did a short interview on a radio show as part of an event. During this interview, we mentioned the design and the meaning behind it. The next day, we were surprised to get a message saying that our faces were on the front cover of the Metro. The design had been picked up by a number of mass media sources and was scattered across newspapers throughout the country. This led to an interview for Radio 4 and an invitation to visit a TV studio in London to speak about our work.
-
-This project was featured in:
+## As featured in
 - [The Daily Mail Online](https://www.dailymail.co.uk/femail/article-3330164/Smart-handbag-humiliates-shopaholics-SHOUTING-need-loud-male-voice-credit-card-removed.html)
 - BBC Radio 4 – You and Yours
 - The Courier
@@ -50,12 +44,11 @@ This project was featured in:
 
 https://www.youtube.com/watch?v=nNFRXGEFV_8
 
-## The Process
+## How it was made
 
-![the handbag technology](/images/handbag-wip.jpg)
-The prototype handbag was built using Arduino in combination with a sensor that would sense when the debit card was removed. A sound clip was then played to attempt to deter the user from making the purchase.
+![The technology within the handbag](/images/handbag-wip.jpg)
+The handbag was created using my father's old bookbinding leather that I found in a cupboard. Our aim was to embody the anti-consumerist approach by creating something that would have a lovely handmade feeling. We used a sailmakers' stitch to create the simple strucuture, also making sure that the speaker was visible as a key design element. The fully functioning prototype handbag was built using Arduino in combination with a sensor that would sense when the debit card was removed. A series of sound clips were then played to attempt to deter the user from making the purchase. These were coded to come randomly but from three pools of sound clips to change the tone as time passes while the debit card is still removed. 
 
-![testing and prototyping](/images/handbag-test.jpg)
+![Testing and prototyping](/images/handbag-test.jpg)
 
-![crafting the handbag](/images/handbag-craft.jpg)
-The handbag was created using my father's old bookbinding leather. We used a sailmakers' stich to create the design.
+![Crafting the handbag](/images/handbag-craft.jpg)
