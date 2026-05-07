@@ -3,12 +3,6 @@ title: "Building a community data trust prototype"
 summary: "A reflective walk-through of building a working community data trust prototype for Hoy and Walls."
 image: "/images/grafana.png"
 imageAlt: "Screenshot of prototype dashboard"
-tech:
-  - "Web Development"
-  - "Data Engineering"
-  - "Docker"
-  - "Python"
-  - "Grafana"
 year: "2024"
 collaborators: 
 tags:
@@ -20,7 +14,7 @@ featuredIn:
 featuredOrder: 2
 status:
 siteUrl:
-skills: "Web development, critical making."
+methods: "Web development, critical making."
 ---
 
 This is the technical companion to my dissertation project on community data trusts in Hoy and Walls. The research side of the project (what I was trying to find out, what people on the islands made of it, and what I came away thinking) is written up in [Tools, trust, and small places]({{ '/projects/island-data-futures/' | url }}). This one is about the prototype that I built do support the research and how the choices that went into this process shaped the research in turn.

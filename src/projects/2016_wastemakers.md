@@ -3,14 +3,12 @@ title: "Wastemakers"
 summary: "A kit to inspire people to build with waste materials."
 image: "/images/wastemakers_1_resized.jpg"
 imageAlt: "Wastemakers cover image"
-tech:
-  - "creative"
 siteUrl:
 repoUrl:
 tags:
   - "creative"
 year: "2016"
-skills: "Design, Research, Electronics, Prototyping"
+methods: "Design, research, electronics, prototyping"
 kind: "Kit / artefact"
 featuredIn:
 featureOrder:

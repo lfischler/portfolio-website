@@ -3,9 +3,6 @@ title: "the intersection (Superflux)"
 summary: "Contribution to project by design studio Superflux."
 image: "/images/Sensor-jar_SF_sized-for-web.jpg"
 imageAlt: "sensor for the intersection"
-tech:
-  - "Futures"
-  - "Design"
 siteUrl: "https://superflux.in/index.php/work/the-intersection"
 repoUrl: 
 collaborators: "Superflux, Ed Lewis"
@@ -18,7 +15,7 @@ featuredIn:
   - "creative"
 featuredOrder: 3
 status:
-skills: "Critical making, speculative futures, craft."
+methods: "Critical making, speculative futures, craft."
 ---
 
 *The Intersection* is a short film made by [Superflux](https://superflux.in/index.php/work/the-intersection) and commissioned by Omidyar Network in 2020–21. It follows four protagonists whose lives have been shaped by the attention economy: misinformation, surveillance capitalism, and the slow collapse of trust in information itself. The film builds from a dystopian present towards a possible hopeful future. Writing this in 2026, with generative AI now woven into most of our information environment, the dystopian parts feel less like speculation and more like recent history. My main contribution was in imagining and building artefacts from that possible future.

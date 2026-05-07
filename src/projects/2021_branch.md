@@ -1,15 +1,13 @@
 ---
-title: "Speculative Story for Branch Magazine"
+title: "Speculative Story for Branch Magazine (placeholder)"
 summary: "Speculative futures story featured in Mozilla's Branch Magazine"
 image: "/images/cutlery/cutlery-30.jpg"
 imageAlt: "Sculptural cutlery"
 year: 2021
-tech:
-  - "Futures"
 collaborators: "Superflux, Nicola Ferrao"
 siteUrl:
 repoUrl:
-skills: "Speculative futures"
+methods: "Speculative futures"
 tags:
   - "creative"
 kind: "Short story"

@@ -3,14 +3,11 @@ title: "Boatbuilding with Archipelago Folkschool"
 summary: "We built a wooden boat in five days with Arcipelago Folkschool"
 image: "/images/boat_8_resized.jpg"
 imageAlt: "boatbuilders having fun"
-tech:
-  - "Woodwork"
-  - "Craft"
 siteUrl: 
 repoUrl:
 year: 2018
 collaborators: "Archipelago Folkschool"
-skills: "Woodworking, boat building"
+methods: "Woodworking, boat building"
 tags:
   - "play"
 kind: "Hands-on learning"

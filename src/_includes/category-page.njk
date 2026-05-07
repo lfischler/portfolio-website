@@ -84,11 +84,7 @@
       <span class="yr">{{ p.data.yearDisplay or p.data.year }}</span>
       <span class="title">{{ p.data.title | safe }}</span>
       <span class="kind">{{ p.data.kind or "" }}</span>
-      <span class="tags">
-        {%- for t in p.data.tech or [] -%}
-          <span>{{ t }}</span>
-        {%- endfor -%}
-      </span>
+      <span class="kind">{{ p.data.methods or "" }}</span>
     </a>
   {%- endfor -%}
 </div>

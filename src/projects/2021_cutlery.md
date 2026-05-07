@@ -4,14 +4,10 @@ summary: "Sculptural contributions to Superflux's Refuge for Resurgence (2021)"
 image: "/images/cutlery/cutlery-30.jpg"
 imageAlt: "Sculptural cutlery"
 year: 2021
-tech:
-  - "Futures"
-  - "Design"
-  - "Craft"
 collaborators: "Superflux"
 siteUrl: "https://superflux.in/index.php/work/refuge-for-resurgence/#"
 repoUrl:
-skills: "Critical making, sculpture, craft"
+methods: "Critical making, sculpture, craft, design, futures thinking"
 tags:
   - "creative"
   - "play"

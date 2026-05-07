@@ -28,11 +28,7 @@
   <p class="desc">{{ project.data.summary | safe }}</p>
   {% endif %}
 
-  {% if project.data.tech and project.data.tech.length %}
-  <p class="tags">
-    {%- for t in project.data.tech -%}
-      <span>{{ t }}</span>
-    {%- endfor -%}
-  </p>
+  {% if project.data.methods %}
+  <p class="tags">{{ project.data.methods }}</p>
   {% endif %}
 </a>

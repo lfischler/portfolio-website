@@ -3,17 +3,14 @@ title: "'Excuse me? Excuse you!': an anti-consumerist handbag"
 summary: "A critical design project from 2014 that ended up on the front page of the Metro."
 image: "/images/handbag-logos.jpg"
 imageAlt: "Handbag with logos"
-tech:
-  - "Creative Response"
-  - "Critical Design"
 siteUrl: 
 repoUrl: 
 year: "2014"
 collaborators: Rebecca Smith, Kirsty Sneddon
-skills: "Critical design"
+methods: "Critical design"
 tags:
   - "creative"
-kind: "Critical design"
+kind: "Artefact"
 featuredIn:
 status:
 ---

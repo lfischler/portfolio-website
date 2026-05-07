@@ -27,16 +27,9 @@ wide: true
       <span class="v">{{ kind }}</span>
     {% endif %}
 
-    {% if skills %}
-      <span class="k">Skills</span>
-      <span class="v"><em>{{ skills }}</em></span>
-    {% endif %}
-
-    {% if tech and tech.length %}
-      <span class="k">Tags</span>
-      <span class="v tags">
-        {%- for t in tech -%}<span>{{ t }}</span>{%- endfor -%}
-      </span>
+    {% if methods %}
+      <span class="k">Methods</span>
+      <span class="v"><em>{{ methods }}</em></span>
     {% endif %}
 
     {% if collaborators %}
@@ -55,6 +48,12 @@ wide: true
     {% endif %}
 
   </div>
+
+  {% if image %}
+  <div class="project-image">
+    <img src="{{ image | cloudinaryUrl(1200) }}" alt="{{ imageAlt or title }}" loading="lazy">
+  </div>
+  {% endif %}
 
   <div class="prose">
     {{ content | safe }}

@@ -3,15 +3,11 @@ title: "Anatomies of a Black Box mapping Energy's relationship with AI"
 summary: "Contribution to Matadero Estudios Críticos. Vol. 2"
 image: "/images/energy-ai_1.jpg"
 imageAlt: "Screenshot of data visualisation"
-tech:
-  - "Data analysis"
-  - "Machine learning"
-  - "Research"
 siteUrl: "https://freeport.institute/cargo/MEC_Freeport_2020_Anatomias_de_una_caja_negra.pdf"
 repoUrl:
 year: 2020
 collaborators: "Christopher Page"
-skills: "Data analysis, machine learning, research"
+methods: "Data analysis, machine learning, research"
 tags:
   - "technical"
   - "research"
