@@ -22,8 +22,6 @@ featuredOrder: 1
 status: "recent"
 ---
 
-
-
 ## Exploring Community Data Trusts in Small Places
 I began this project optimistic about community data trusts. I'd seen how well other tools have settled into the work of community organisations in Orkney, particularly in community energy: a wind turbine, sited and owned locally, can fit the rhythms of a place and generate real benefit for the people who live there. I wanted to find out whether a digital equivalent might do the same for household energy data in Hoy and Walls.
 
