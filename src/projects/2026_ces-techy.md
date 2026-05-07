@@ -20,15 +20,15 @@ featuredOrder: 3
 status: "recent"
 ---
 
-My role at Community Energy Scotland is Technical Team Manager. I lead a team of three to five and we operate as a kind of internal technical consultancy within the wider work of the charity. Projects across CES can draw on our expertise, we run sessions to build technical understanding across the wider team, and we deliver consultancy projects of our own from start to finish, often for community organisations. I'm responsible for allocating people across projects, making sure the team isn't over-stretched, and ensuring everyone has the skills and tools they need to do their best work.
+My role at [Community Energy Scotland](https://communityenergy.scot/) is Technical Team Manager. I lead a team of three to five and we operate as a kind of internal technical consultancy within the wider work of the charity. Projects across CES can draw on our expertise, we run sessions to build technical understanding across the wider team, and we deliver consultancy projects of our own from start to finish, often for community organisations. I'm responsible for allocating people across projects, making sure the team isn't over-stretched, and ensuring everyone has the skills and tools they need to do their best work.
 
-## What the work actually involves
+# What the work actually involves
 
  The work spans a lot of ground. We support communities who are repowering or installing energy generation equipment such as wind, solar, hydro, and batteries: helping them understand what's feasible on their site, what a grid connection involves, what the likely returns are, and what the maintenance risks look like. We also support communities who have community buildings such as community halls. These spaces are often expensive to heat and inefficient - our first task is often just understanding where the energy is going. Our team also does some wind farm management work; we've done lots of mapping of community energy assets; and right now I'm leading our input into a microgrid feasibility study for an ambitious community with a long history in energy generation. The project began with a workshop that brought together key community representatives, the client's technical lead, and technical minds from across Community Energy Scotland. Together, we carefully unpicked what the islands' priorities are and where the technical opportunity of a microgrid fits within those priorities. The findings became a framework for the technical brief that followed. My role was in coordinating all of this and ensuring that what emerged was carried forward into the work that followed.
 
  ![Community members and engineers at a hydro weir on Harris](/images/Harris-hydro.jpg)
 
-## What this work has taught me
+# What this work has taught me
 
 On reflecting on this role, I notice how much I've learned about what it means to work with and support place-based community organisations. The people developing these projects are often volunteers working to improve their local circumstances for everyone. The technical projects must fit into how they actually work. I've written about this more in [my writing on my dissertation project](/projects/2025_island-data-futures), where I explore what it means for a tool to be genuinely convivial: accessible, repairable, positively connected to the ways a community works and the activities it does. I learned about those principles in doing this technical work.
 
